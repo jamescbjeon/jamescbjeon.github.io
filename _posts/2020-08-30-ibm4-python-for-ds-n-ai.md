@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Python for Data Science and AI
-subtitle: Course summary - IBM Data Science Professianl 8
+subtitle: Course summary - IBM Data Science Professinal 8
 categories: markdown
 tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
 ---
@@ -32,15 +32,16 @@ print(sys.version)
 ### 1.1 Types
 [Jupyter Notebook 정리노트][ipynb-4-1-1]
 
-* Data type
-    1. int
-    2. float
-    3. str
-    4. bool : True, False
+|     | int | float | str | bool |
+| --- | --- | ----- | --- | ---- |
+| Ex  | 1, -1| 3.141|'ABC'|True, False|
+| Numeric? | Yes | Yes | No | Possible |
+| Indexing? | No | No | Yes | No |
 
-* Usage
-    * Cast (타입 변경): `int`, `float`, `str`, `bool`
-    * float max/min 정보 등: `sys.float_info`
+
+* Cast (타입 변경): `int`, `float`, `str`, `bool`
+
+> `sys.float_info` : float max/min 정보 등 확인
 
 ### 1.2 Expressions and Variables
 
@@ -49,6 +50,7 @@ print(sys.version)
     2. dividor : 25//6 => 4, int로 몫만 반환
 
 ### 1.3 String Operations
+
 [Jupyter Notebook 정리노트][ipynb-4-1-2]
 
 * String 자료 구조는 기본적으로 tuple로 이해 가능
@@ -60,8 +62,8 @@ print(sys.version)
 
 * Escape
   * Backslash \ : `\n` new line, `\t` tab
-  * `\` 출력하기
-    1. `\\`
+  * \ 출력하기
+    1. `\\`  <= 두 번 연속 붙여쓰기
     2. string 앞에 r 입력 (raw): ex. `print(r" Michael Jackson \ is the best" )`
 
 * Method
@@ -75,50 +77,14 @@ print(sys.version)
 
 ## 2 Python Data Structures
 
-<table>
-    <thead>
-        <tr>
-            <th>Class</th>
-            <th>Type</th>
-            <th>Data</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=4>Non-<br>collection</td>
-            <td rowspan=2>Number</td>
-            <td><strong>int</strong></td>
-        </tr>
-        <tr>
-            <td><strong>float</strong></td>
-        </tr>
-        <tr>
-            <td>String</td>
-            <td><strong>str</strong>&nbsp&nbsp&nbsp# tuple로도 이해 가능</td>
-        </tr>
-        <tr>
-            <td>Boolean</td>
-            <td><strong>bool</strong> - True/False</td>
-        </tr>
-        <tr>
-            <td rowspan=4>Collection</td>
-            <td>Tuple</td>
-            <td><strong>tuple</strong></td>
-        </tr>
-        <tr>
-            <td>List</td>
-            <td colspan=2><strong>list</strong></td>
-        </tr>
-        <tr>
-            <td>Dictionary</td>
-            <td colspan=2><strong>dictionary</strong></td>
-        </tr>
-        <tr>
-            <td>Set</td>
-            <td colspan=2><strong>set</strong></td>
-        </tr>
-    </tbody>
-</table>
+|      |	Tuple	| List	| Dictionary	| Set |
+| ---- | ----- | ------| ----------- | ----- |
+| Ex	 |('Book 1', 12.99)|['apple', 'banana', 'orange']|{'name': 'Joe', 'age': 10}|{10, 20, 12}|
+|Mutable? |Immutable|Mutable|Mutable	|Mutable|
+|Ordered?	|Ordered	|Ordered	|Preserves order since Python 3.7	|Unordered|
+|Iterable?	|Yes (takes linear time)	|Yes (takes linear time)	|Yes (constant time)	|Yes (constant time)|
+|Use case	|Immutable data	|Data that needs to change	|Key/Value pairs	|Unique items|
+
 
 ### 2.1 Lists and Tuples
 [Jupyter Notebook 정리노트 - Tuple][ipynb-4-2-1]   
@@ -146,8 +112,45 @@ print(sys.version)
 
 ### 2.2 Sets
 
+[Jupyter Notebook 정리노트 - Sets][ipynb-4-2-3]
+
+> No order, Unique values only
+
+* Operation
+  * Define
+    1. A = `{ITEM1, ITEM2, ...}`
+    1. A = `set(LIST)`
+  * Add/Remove
+    * `SET.add(ITEM)` : 항목 추가
+    * `SET.remove(ITEM)` : 항목 삭제
+
+* IN
+  * ITEM `in` SET/LIST/TUPLE/DICT : 포함 여부 판단 후 bool 반환
+
+* Logic - set A, B
+  * A U B : `A.union(B)`
+  * A & B : `A & B`, `A.intersection(B)`
+  * A - B : `A.difference(B)`
+  * B - A : `B.difference(A)`
+  * `A.issuperset(B)` : A는 B를 포함하는가? Bool 반환
+  * `A.issubset(B)` : A는 B에 포함되는가? Bool 반환
+
 ### 2.3 Dictionaries
 
+[Jupyter Notebook 정리노트 - Dictionaries][ipynb-4-2-4]
+
+> Key & Value로 정의
+  * Key : Unique value only, LIST의 INDEX 역할
+  * Dicionary : Duplicate 가능
+
+* Operation
+  * Define : `{'KEY1':'VALUE1', ...}`
+  * Add : `DICT_NAME['NEW_KEY'] = 'VALUE'`
+  * Delete : `del(DICT_NAME['KEY'])`
+
+* Key/Values
+  * `DICT.keys()` : key 목록을 List로 반환
+  * `DICT.values()` : value 목록을 List로 반환
 
 ***
 
@@ -186,3 +189,6 @@ print(sys.version)
 [ipynb-4-1-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-2-Strings.ipynb
 [ipynb-4-2-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-1-Tuples.ipynb
 [ipynb-4-2-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-2-Lists.ipynb
+[ipynb-4-2-3]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-3-Sets.ipynb
+[ipynb-4-2-4]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-4-Dictionaries.ipynb
+
