@@ -21,6 +21,10 @@ tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
 
 ***
 
+* Cheat-sheet
+  * [Python2.7][cheat-sheet-python27]
+
+
 ## 1 Python Basics
 
 ~~~Notebook
@@ -124,7 +128,7 @@ print(sys.version)
     * `SET.add(ITEM)` : 항목 추가
     * `SET.remove(ITEM)` : 항목 삭제
 
-* IN
+* `in`
   * ITEM `in` SET/LIST/TUPLE/DICT : 포함 여부 판단 후 bool 반환
 
 * Logic - set A, B
@@ -158,11 +162,118 @@ print(sys.version)
 
 ### 3.1 Conditions and Branching
 
+[Jupyter Notebook 정리노트 - Conditions][ipynb-4-3-1]
+
+* Comparison operators
+  * Operatior
+    * `==`, `!=`
+    * `>`, `<`, `>=`, `<=`
+  * 비교 결과는 boolean 형태로 반환 (True, False)
+
+> 문자의 경우도 비교 가능
+> 첫 대문자부터 ASCII 코드 번호로 비교 (대소문자 주의!)
+
+* Logical operators  : `and`, `or`, `not`
+
+|  A  |  B  |     |`and |`or` |`not`|
+| --- | --- | --- | --- | --- | --- |
+|False|False|     |False|False|True |
+|False|True |     |False|True |True |
+|True |False|     |False|True |False|
+|True |True |     |True |True |False|
+
+*`not` 연산자의 경우, A만 대상으로 계산한 결과임*
+
+* **IF** statment
+
+~~~Python
+if CONDITION:  # 조건은 bool 형태로 반환되어야 함
+  statement
+elif CONDITION:
+  statement
+else:         # else는 상기 조건을 모두 미충족되었을 때만 실행
+  statement
+~~~
+
 ### 3.2 Loops
+
+[Jupyter Notebook 정리노트 - Loops][ipynb-4-3-2]
+
+* `range` : 필요 크기의 숫자 컨테이너를 생성
+  1. `range(n)` : 0부터 n-1까지
+  2. `range(i, n)` : i부터 n-1까지
+  3. `range(i, n, k)` : i부터 n-1까지 k만큼 간격으로
+
+> Python3부터는 별도로 List를 생성하지 않고, range 객체로 취급됨
+
+* `enumerate` : 반복문에서 횟수 확인에 사용
+  * tuple - (index, element) 형태로 결과 반환
+
+~~~Python/Example
+>> t = [1,3,5,7,9]
+>> for i in enumerate(t):
+      print(i)
+...
+(0, 1)
+(1, 3)
+...
+> for i, v in enumerate(t):
+      print(i, v)
+...
+0  1
+1  3
+...
+~~~
+
+* **for** loop
+
+~~~Python
+for COUNTER in COLLECTION:
+  statement
+~~~
+
+* **while** loop
+
+~~~Python
+while CONDTION:
+  statement
+~~~
+
+> `for`와 `while` loop의 차이는 반복 횟수를 사전에 지정하느냐, 혹은 조건에 따라 중지하느냐에 따라 구분
 
 ### 3.3 Functions
 
+[Jupyter Notebook 정리노트 - Functions][ipynb-4-3-3]
+
+~~~Python
+def FUNC_NAME(ARGUMENTS):
+  """
+  documentation  # for HELP command
+  """
+  BODY  
+  return RESULT
+~~~
+
+* Tips
+  * `help(FUNC_NAME)` : 함수의 documentation 확인
+  * `if` 분기로 여러 개의 `return`을 지정 가능
+
+* Default argument value 설정
+  * `ARG_NAME = VALUE` : def 시, arg 값에 사전 할당 가능 (값이 들어오면 변경됨)
+
+* `global VAR_NAME` : 전역 변수 지정. 함수 밖에서도 접근 가능
+
+* [Multiple arguments - collection (변수 숫자가 정해지지 않은 경우)][multiple-arg]
+  1. `*args` : tuple 형태로 변수 대기
+  2. `**kwargs` : dictionary 형태로 변수 대기 (key/value pair)
+
+> 변수 순서 : normal arg > *args > ** kwargs - 틀릴 경우, 에러 발생
+
 ### 3.4 Objects and Classes
+
+[Jupyter Notebook 정리노트 - Objects][ipynb-4-3-4]
+
+
 
 ***
 
@@ -185,10 +296,17 @@ print(sys.version)
 
 [coursera-ibm-ds]: https://www.coursera.org/professional-certificates/ibm-data-science
 [coursera-ibm-ds-4]: https://www.coursera.org/learn/python-for-applied-data-science-ai?specialization=ibm-data-science
+
+[cheat-sheet-python27]: http://www.astro.up.pt/~sousasag/Python_For_Astronomers/Python_qr.pdf
+[multiple-arg]: https://brunch.co.kr/@princox/180
+
 [ipynb-4-1-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-1-Types.ipynb
 [ipynb-4-1-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-2-Strings.ipynb
 [ipynb-4-2-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-1-Tuples.ipynb
 [ipynb-4-2-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-2-Lists.ipynb
 [ipynb-4-2-3]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-3-Sets.ipynb
 [ipynb-4-2-4]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-2-4-Dictionaries.ipynb
-
+[ipynb-4-3-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-1-Conditions.ipynb
+[ipynb-4-3-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-2-Loops.ipynb
+[ipynb-4-3-3]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-3-Functions%20.ipynb
+[ipynb-4-3-4]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-4-Classes.ipynb

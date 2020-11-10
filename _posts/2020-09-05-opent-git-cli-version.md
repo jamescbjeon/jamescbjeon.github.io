@@ -18,10 +18,10 @@ tags: [Git, CLI, 버전관리, 생활코딩, 정리노트]
   1. ~~Cherry pick & rebase~~
   1. ~~Github pull request~~
 
-[git1]: https://jamescbjeon.github.io/markdown/2020/10/29/opent-git-cli-version.html
-[git2]: https://jamescbjeon.github.io/markdown/2020/10/30/opent-git-cli-branch.html
-[git3]: https://jamescbjeon.github.io/markdown/2020/10/31/opent-git-cli-backup.html
-[git4]: https://jamescbjeon.github.io/markdown/2020/11/01/opent-git-cli-collaboration.html
+[git1]: https://jamescbjeon.github.io/markdown/2020/09/05/opent-git-cli-version.html
+[git2]: https://jamescbjeon.github.io/markdown/2020/09/06/opent-git-cli-branch.html
+[git3]: https://jamescbjeon.github.io/markdown/2020/09/07/opent-git-cli-backup.html
+[git4]: https://jamescbjeon.github.io/markdown/2020/09/08/opent-git-cli-collaboration.html
 [git-cli-version]: https://opentutorials.org/course/3839
 
 ***
@@ -233,7 +233,7 @@ egoing 선생님이 추천해 주는 추가로 공부하면 좋을 git 관련 �
 * tag :	commit_ID는 알아보기 힘드므로 쉬운 이름을 붙여 중요한 버젼을 찾아갈 수 있도록
 * backup : 다음 수업 주제		
 
-[blog-posix-cli]: https://jamescbjeon.github.io/markdown/2020/10/28/opent-posix-cli1.html
+[blog-posix-cli]: https://jamescbjeon.github.io/markdown/2020/09/01/opent-posix-cli1.html
 [git-hp]: https://git-scm.com/
 [git-gui-clinets]: https://git-scm.com/downloads/guis
 [git-reset]: https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0
