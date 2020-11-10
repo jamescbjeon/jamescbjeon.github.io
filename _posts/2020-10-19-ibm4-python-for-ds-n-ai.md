@@ -21,8 +21,8 @@ tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
 
 ***
 
-* Cheat-sheet
-  * [Python2.7][cheat-sheet-python27]
+> Cheat-sheet
+> * [Python2.7][cheat-sheet-python27]
 
 
 ## 1 Python Basics
@@ -34,7 +34,7 @@ print(sys.version)
 ~~~
 
 ### 1.1 Types
-[Jupyter Notebook 정리노트][ipynb-4-1-1]
+[Jupyter Notebook - Types][ipynb-4-1-1]
 
 |     | int | float | str | bool |
 | --- | --- | ----- | --- | ---- |
@@ -55,7 +55,7 @@ print(sys.version)
 
 ### 1.3 String Operations
 
-[Jupyter Notebook 정리노트][ipynb-4-1-2]
+[Jupyter Notebook - String][ipynb-4-1-2]
 
 * String 자료 구조는 기본적으로 tuple로 이해 가능
   * Indexing
@@ -91,8 +91,8 @@ print(sys.version)
 
 
 ### 2.1 Lists and Tuples
-[Jupyter Notebook 정리노트 - Tuple][ipynb-4-2-1]   
-[Jupyter Notebook 정리노트 - List][ipynb-4-2-2]
+[Jupyter Notebook - Tuple][ipynb-4-2-1]   
+[Jupyter Notebook - List][ipynb-4-2-2]
 
 > Tuple과 List는 거의 동일. 단, Tuple은 Immutable, List는 Mutable하여 특성 차이가 발생. 보통 변하면 안 되는 중요한 정보를 tuple로 처리하고 나머지는 list가 용이.
 
@@ -141,7 +141,7 @@ print(sys.version)
 
 ### 2.3 Dictionaries
 
-[Jupyter Notebook 정리노트 - Dictionaries][ipynb-4-2-4]
+[Jupyter Notebook - Dictionaries][ipynb-4-2-4]
 
 > Key & Value로 정의
   * Key : Unique value only, LIST의 INDEX 역할
@@ -162,27 +162,24 @@ print(sys.version)
 
 ### 3.1 Conditions and Branching
 
-[Jupyter Notebook 정리노트 - Conditions][ipynb-4-3-1]
+[Jupyter Notebook - Conditions][ipynb-4-3-1]
 
 * Comparison operators
-  * Operatior
-    * `==`, `!=`
-    * `>`, `<`, `>=`, `<=`
+  * Operator 
+    * `==`, `!=`, `>`, `<`, `>=`, `<=`
   * 비교 결과는 boolean 형태로 반환 (True, False)
-
-> 문자의 경우도 비교 가능
-> 첫 대문자부터 ASCII 코드 번호로 비교 (대소문자 주의!)
+  * 문자도 비교 가능. 첫 글자부터 ASCII 코드 번호로 비교
 
 * Logical operators  : `and`, `or`, `not`
+  * *`not` 연산자의 경우, A만 대상으로 계산한 결과임*
 
-|  A  |  B  |     |`and |`or` |`not`|
+|  A  |  B  |     |`and`|`or` |`not`|
 | --- | --- | --- | --- | --- | --- |
 |False|False|     |False|False|True |
 |False|True |     |False|True |True |
 |True |False|     |False|True |False|
 |True |True |     |True |True |False|
 
-*`not` 연산자의 경우, A만 대상으로 계산한 결과임*
 
 * **IF** statment
 
@@ -243,7 +240,7 @@ while CONDTION:
 
 ### 3.3 Functions
 
-[Jupyter Notebook 정리노트 - Functions][ipynb-4-3-3]
+[Jupyter Notebook - Functions][ipynb-4-3-3]
 
 ~~~Python
 def FUNC_NAME(ARGUMENTS):
@@ -273,7 +270,24 @@ def FUNC_NAME(ARGUMENTS):
 
 [Jupyter Notebook 정리노트 - Objects][ipynb-4-3-4]
 
+* Class --> Instance : Object --> Attribute
+  1. attributes : 자료가 가져야 할 특성
+  2. methods : class 자체 내장 함수
 
+~~~Python
+# Creating a Class
+class CLASS_NAME(object): # 괄호 안은 class parent. 이 경우, object를 사용
+  
+  def __init__(self, attr1, ...):  # Constructor
+    self.attr1 = ...
+    self.attr2 = ...
+
+  def METHOD1(self, ARGS):  # Method
+    ...
+    return(RETURN_VALUE)
+~~~
+
+> `dir(CLASS)` class 내부 호출 가능한 methods/attributes list 반환  
 
 ***
 
