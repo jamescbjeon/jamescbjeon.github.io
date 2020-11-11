@@ -165,7 +165,7 @@ print(sys.version)
 [Jupyter Notebook - Conditions][ipynb-4-3-1]
 
 * Comparison operators
-  * Operator 
+  * Operator
     * `==`, `!=`, `>`, `<`, `>=`, `<=`
   * 비교 결과는 boolean 형태로 반환 (True, False)
   * 문자도 비교 가능. 첫 글자부터 ASCII 코드 번호로 비교
@@ -268,7 +268,7 @@ def FUNC_NAME(ARGUMENTS):
 
 ### 3.4 Objects and Classes
 
-[Jupyter Notebook 정리노트 - Objects][ipynb-4-3-4]
+[Jupyter Notebook - Objects][ipynb-4-3-4]
 
 * Class --> Instance : Object --> Attribute
   1. attributes : 자료가 가져야 할 특성
@@ -277,7 +277,7 @@ def FUNC_NAME(ARGUMENTS):
 ~~~Python
 # Creating a Class
 class CLASS_NAME(object): # 괄호 안은 class parent. 이 경우, object를 사용
-  
+
   def __init__(self, attr1, ...):  # Constructor
     self.attr1 = ...
     self.attr2 = ...
@@ -289,23 +289,226 @@ class CLASS_NAME(object): # 괄호 안은 class parent. 이 경우, object를 �
 
 > `dir(CLASS)` class 내부 호출 가능한 methods/attributes list 반환  
 
+### 3.5 Exception handling
+
+[Jupyter Notebook - Exception][ipynb-4-3-5]   
+[Python Document - Exception][doc-python-exception]
+
+* Execution 중 Error 발생 시,
+  1. Not prepared : Halt the Execution
+  2. Prepared : Raise exception --> 준비된 예외코드 실행
+    * ex. 'ZeroDivisionErro', 'NameError', 'IndexError', ...
+
+~~~Python
+## try-except-finally structure
+try:
+    # 실행하려는 코드
+except ERROR_CODE:  # 생략가능
+    # 별도 에러코드를 분리해서 지정 가능
+except:
+    # 지정된 에러 이외 예외처리 발생 시 실행 코
+else:  # 생략가능
+    # 에러가 없을 때 실행되는 코드. try --> else
+finally:  # 생략가능
+    # 에러 여부와 관계없이 마지막에 실행될 코드
+~~~
+
 ***
 
 ## 4. Working with Data in Python
 
 ### 4.1 Reading files with open
 
+[Jupyter Notebook - Read File][ipynb-4-4-1]   
+
+~~~Python
+# No-with : 작업 종료 후 .close 필요
+fhand = open('PATH/NAME', 'r')
+content = fhand.read()   # File obj에서 내용만 불러와 string으로 저장
+fhand.close()
+
+# With : .close() 필요 없음
+with open('PATH/NAME', 'r') as fhand:
+  content = fhand.read()
+~~~
+
+* File open
+  * Hanlder를 통해 File object로 해당 내용을 불러옴
+  * Mode
+    1. `r` : Read
+    2. `w` : Write
+    3. `a` : Append
+  * Resource 유실을 막기 위해 사용 완료 후에는 `fhand.close()` 필요
+    * 보통 `with` 구문으로 open 후 자동 close
+
+* Textfile Attributes & Methods
+  * 줄의 마지막에는 '\n'이 별도 문자로 포함
+  * `.read()`
+    * Handler 내부 내용을 읽어옴
+    * `.read(n)` : n을 별도 지정 시, 해당 문자열 갯수만큼만 불러옴. 다시 사용 시, 종료된 이후부터 재개
+  * `.readline(n)` : 지정된 n만큼의 문자열을 읽어오며, \n이 있을 경우 종료
+  * `.readlines()` : 개별 줄을 구분하여 list 형태로 저장. 각 항목 마지막에는 \n이 포함
+
+
 ### 4.2 Writing files with open
 
-### 4.3 Loading data with Pandas
+[Jupyter Notebook - Write File][ipynb-4-4-2]   
 
-### 4.4 Working with and Saving data with Pandas
+~~~Python
+# Write : 기존 내용은 무시하고 신규로 작성
+with open('PATH/NAME', 'w') as fhand:
+  fhand.write(....)
 
-### 4.5 Numpy
+# Append : 기존 내용 이후에 추가
+with open('PATH/NAME', 'a') as fhand:
+  fhand.write(....)
+
+# 파일 복사
+with open('PATH/NAME', 'r') as readfile:
+  with open('PATH/NAME', 'w') as writefile:
+    for line in readfile:
+      writefile.write(line)
+~~~
+
+* Write/Append
+  * `.write(CONTENT)` 신규 내용 작성. 재호출 시, 종료된 이후부터 작성.
+
+### 4.3 Pandas
+
+* import : `import pandas as pd`
+* load : `pd.read_csv('PATH')`, `pd.read_excel('PATH')`, ...
+* save : `to_csv('NAME')`
+
+* Dataframe object
+  * Pandas 자료형태 : DF - 2차원 구조
+    1. row index
+    2. column header
+  * dict 자료형은 dataframe로 변환 가능
+
+* Address
+  1. loc : label based, 숫자 또는 헤더라벨로 접근 (ex.`df.loc[0, 'Artist']`)
+  2. iloc : integer based, 숫자로만 접근 (ex. `df.iloc[0:2, 0:3]`)
+
+~~~Pandas
+# Useful example
+
+# Artist 열의 값을 중복 없는 형태로 반환
+df['Artist'].unique  
+
+# 해당 열만 모은 new_df 신규 생성
+new_df = df[['Artist', 'Albumyear', ...]]
+
+
+# Albumyer 열을 조건에 맞춰 boolean 형태로 반환
+df['Albumyear'] >= 1980  
+# 해당 조건 만족하는 row만 추출하여 new_df 신규 생성
+new_df = df[df['Albumyear'] > 1980]
+
+~~~
+
+### 4.4 Numpy
+
+[Jupyter Notebook - Numpy1D][ipynb-4-5-1]   
+[Jupyter Notebook - Numpy2D][ipynb-4-5-2]   
+
+* import: `import numpy as np`
+* creation: `np.array(LIST)`  # list를 numpy.ndarray 객체로 변환
+
+* Useful fuction
+  * `np.pi` : PI값 반환
+  * `np.sin(ARRAY)` : array 개별값을 sin 변환
+  * `np.linespace(a, b, num = k)`  # a부터 b까지 k개의 간격으로 array 생성
+
+* Array attributes
+  * `.dtype` : array 내부 데이터 타입 (ex. int32, float64...)
+  * `.size` : array 내부 데이터 갯수
+  * `.ndim` : array dimension. 정수값 (1, 2, ...)
+  * `.shape` : row/column 갯수 (n, m)
+
+* Array methods
+  * `.mean()`, `.std()`, `.max()`, `.min()`
+  * `.T` : transpose
+
+* Slicing & Accessing : 아래 2가지 모두 동일한 결과
+  1. A[n, m]
+  2. A[n][m]
+
+* Array calculation
+  1. Addition : `A + B`
+    * Add constant : `A + n`
+  2. Multiplication : `n * A`
+  3. Product : `A * B` --> 같은 행열 값끼리 곱
+  4. **Dot product** : `np.dot(A, B)`
+
+> 1d-array는 vector로, 2d-array는 matrix로 이해 가능
+
+### 4.5 Simple API - Application Programming Interface
+
+[Jupyter Notebook - Simple API][ipynb-4-5-3]  
+
+> Your program  --- **API** (input) ---> Software component   
+> Your program  <-- Data (output) -- Software component   
+
+* API : **A**pplication **P**rogramming **I**nterface
+  * An API lets two pieces of software talk to each other.
+  * Pandas library도 API로 볼 수 있음
+* REST APIs : **RE**presentational **S**tate **T**ransfer
+  * http 기반으로 필요한 자원에 접근하는 방식의 아키텍쳐
+
+### 4.6 Overview of HTTP
+
+[Jupyter Notebook - Requests HTTP][ipynb-4-5-4]  
+
+> Client -- **Request** --> Web server   
+> Client <-- **Response** -- Web server
+
+* URL : **U**niform **R**esource **L**ocator
+  1. Scheme : `https://`
+  2. Base URL (internet address) : `jamescbjeon.github.io/`
+  3. Route : `markdown/2020/10/19/ibm4-python-for-ds-n-ai.html`
+
+* Requests
+  * Server에 필요한 정보를 요청
+    * HTTP method에 의해서 필요한 Response를 얻을 수 있음
+  * Request message : Startline, Header
+
+| HTTP method | Description                    |
+| ----------- | ------------------------------ |
+| GET         | Retrieves data from server     |
+| POST        | Submits data to server         |
+| PUT         | Updates data already on server |
+| DELETE      | Deletes data from server       |
+
+* Response
+  * Request에 의해 수행 후 server에서 전송된 결과 데이터
+  * Response message : Startline, Header, Body
+    * Status code
+      * 200 OK
+      * 401 Unauthorized, 403 Forbidden, 404 Not found
+
+~~~Python
+# Python에서 requests library 사용 예
+
+>> import requests
+
+>> url = 'https://www.ibm.com/'
+>> r = requests.get(url)  # resonponse 객체를 생성
+
+>> r.status_code  
+  200                # response 확인. 양호.
+>>> r.headers
+  {'Date': ..., ...}  # response header 정보 확인
+>>> r.headers['Content-Type']
+  'application/json'
+>>> r.json()    # json을 다루는 method
+  {'args':..., }
+~~~
 
 ***
 
 ## 5. Final Project - Analyzing US Economic Data and Building a Dashboard
+
+[Jupyter Notebook - Final Assignment][ipynb-4-final]
 
 
 [coursera-ibm-ds]: https://www.coursera.org/professional-certificates/ibm-data-science
@@ -313,6 +516,8 @@ class CLASS_NAME(object): # 괄호 안은 class parent. 이 경우, object를 �
 
 [cheat-sheet-python27]: http://www.astro.up.pt/~sousasag/Python_For_Astronomers/Python_qr.pdf
 [multiple-arg]: https://brunch.co.kr/@princox/180
+[doc-python-exception]: https://docs.python.org/3/library/exceptions.html
+
 
 [ipynb-4-1-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-1-Types.ipynb
 [ipynb-4-1-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-2-Strings.ipynb
@@ -324,3 +529,11 @@ class CLASS_NAME(object): # 괄호 안은 class parent. 이 경우, object를 �
 [ipynb-4-3-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-2-Loops.ipynb
 [ipynb-4-3-3]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-3-Functions%20.ipynb
 [ipynb-4-3-4]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-3-4-Classes.ipynb
+[ipynb-4-3-5]: https://github.com/jamescbjeon/ibmDS/blob/master/4/3-1.2ExcecptionHandling.ipynb
+[ipynb-4-4-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-4-1-ReadFile.ipynb
+[ipynb-4-4-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-4-2-WriteFile.ipynb
+[ipynb-4-5-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-5-1-Numpy1D.ipynb
+[ipynb-4-5-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-5-2-Numpy2D.ipynb
+[ipynb-4-5-3]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-5.1_Intro_API.ipynb
+[ipynb-4-5-4]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-5.3_Requests_HTTP.ipynb
+[ipynb-4-final]: https://github.com/jamescbjeon/ibmDS/blob/master/4/test_notebook_final.ipynb
