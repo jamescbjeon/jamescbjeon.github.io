@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Python for Data Science and AI
-subtitle: Course summary - IBM Data Science Professinal 8
-categories: markdown
+subtitle: Course summary - IBM Data Science Professinal 4
+categories: StudyNote
 tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
 ---
 
-*본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [Python for Data Science and AI][coursera-ibm-ds-4]에 대한 정리노트입니다.*
+*본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [4. Python for Data Science and AI][coursera-ibm-ds-4]에 대한 정리노트입니다.*
 
 > IBM Data Science 전문가 과정 : 정리노트   
   1. What is Data Science?
@@ -19,11 +19,29 @@ tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
   1. Machine Learning with Python
   1. Applied Data Science Capstone
 
+> Jupyter notebook
+  * [Type][ipynb-4-1-1]
+  * [String][ipynb-4-1-2]
+  * [Tuple][ipynb-4-2-1]
+  * [List][ipynb-4-2-2]
+  * [Set][ipynb-4-2-3]
+  * [Dictionary][ipynb-4-2-4]
+  * [Condition][ipynb-4-3-1]
+  * [Loop][ipynb-4-3-2]
+  * [Function][ipynb-4-3-3]
+  * [Object/Class][ipynb-4-3-4]
+  * [Exception][ipynb-4-3-5]
+  * [Read file][ipynb-4-4-1]
+  * [Write file][ipynb-4-4-2]
+  * [Numpy 1D][ipynb-4-5-1]
+  * [Numpy 2D][ipynb-4-5-2]
+  * [Simple API][ipynb-4-5-3]
+  * [Requestes HTTP][ipynb-4-5-4]
+  * [Final assignment][ipynb-4-final]
+
+> [Cheat-sheet][cheat-sheet-python27]
+
 ***
-
-> Cheat-sheet
-> * [Python2.7][cheat-sheet-python27]
-
 
 ## 1 Python Basics
 
@@ -116,7 +134,7 @@ print(sys.version)
 
 ### 2.2 Sets
 
-[Jupyter Notebook 정리노트 - Sets][ipynb-4-2-3]
+[Jupyter Notebook - Sets][ipynb-4-2-3]
 
 > No order, Unique values only
 
@@ -194,7 +212,7 @@ else:         # else는 상기 조건을 모두 미충족되었을 때만 실행
 
 ### 3.2 Loops
 
-[Jupyter Notebook 정리노트 - Loops][ipynb-4-3-2]
+[Jupyter Notebook - Loops][ipynb-4-3-2]
 
 * `range` : 필요 크기의 숫자 컨테이너를 생성
   1. `range(n)` : 0부터 n-1까지

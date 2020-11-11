@@ -2,7 +2,7 @@
 layout: post
 title: POSIX CLI
 subtitle: 생활코딩 Posix CLI 정리노트
-categories: markdown
+categories: StudyNote
 tags: [POSIX, CLI, Unix, 생활코딩, 정리노트]
 ---
 

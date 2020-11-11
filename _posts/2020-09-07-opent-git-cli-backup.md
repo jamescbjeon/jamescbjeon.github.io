@@ -2,7 +2,7 @@
 layout: post
 title: Git CLI Backup
 subtitle: 생활코딩 Git CLI Backup 정리노트
-categories: markdown
+categories: StudyNote
 tags: [Git, CLI, Backup, 생활코딩, 정리노트]
 ---
 

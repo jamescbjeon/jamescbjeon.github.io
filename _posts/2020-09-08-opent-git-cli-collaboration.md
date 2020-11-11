@@ -2,7 +2,7 @@
 layout: post
 title: Git CLI 협업
 subtitle: 생활코딩 Git CLI 협업 정리노트
-categories: markdown
+categories: StudyNote
 tags: [Git, CLI, Collaboration, 생활코딩, 정리노트]
 ---
 

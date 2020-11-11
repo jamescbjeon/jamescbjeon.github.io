@@ -2,7 +2,7 @@
 layout: post
 title: Git CLI Branch & Conflict
 subtitle: 생활코딩 Git CLI Branch & Conflict 정리노트
-categories: markdown
+categories: StudyNote
 tags: [Git, CLI, Branch, Conflict, 생활코딩, 정리노트]
 ---
 

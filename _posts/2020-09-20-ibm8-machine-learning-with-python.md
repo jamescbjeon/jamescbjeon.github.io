@@ -2,7 +2,7 @@
 layout: post
 title: Machine Learning with Python
 subtitle: Course summary - IBM Data Science - 8 Machine Learning with Python
-categories: markdown
+categories: StudyNote
 tags: [Data Sceience, Coursera, IBM, Machine Learning, Python, 정리노트]
 ---
  
