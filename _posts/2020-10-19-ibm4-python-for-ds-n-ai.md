@@ -8,16 +8,16 @@ tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
 
 *본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [4. Python for Data Science and AI][coursera-ibm-ds-4]에 대한 정리노트입니다.*
 
-> IBM Data Science 전문가 과정 : 정리노트   
-  1. What is Data Science?
-  1. Tools for Data Science
-  1. Data Science Methodology
-  1. Python for Data Science and AI
-  1. Databases and SQL for Data Science
-  1. Data Analysis with Python
-  1. Data Visualization with Python
-  1. Machine Learning with Python
-  1. Applied Data Science Capstone
+> IBM Data Science 전문가 과정 : 정리노트
+  1. [What is Data Science?][ibm1]
+  1. [Tools for Data Science][ibm2]
+  1. [Data Science Methodology][ibm3]
+  1. [Python for Data Science and AI][ibm4]
+  1. [Databases and SQL for Data Science][ibm5]
+  1. [Data Analysis with Python][ibm6]
+  1. [Data Visualization with Python][ibm7]
+  1. [Machine Learning with Python][ibm8]
+  1. [Applied Data Science Capstone][ibm9]
 
 > Jupyter notebook
   * [Type][ipynb-4-1-1]
@@ -532,10 +532,19 @@ new_df = df[df['Albumyear'] > 1980]
 [coursera-ibm-ds]: https://www.coursera.org/professional-certificates/ibm-data-science
 [coursera-ibm-ds-4]: https://www.coursera.org/learn/python-for-applied-data-science-ai?specialization=ibm-data-science
 
+[ibm1]: https://jamescbjeon.github.io/studynote/2020/09/29/ibm1-what-is-data-science.html
+[ibm2]: https://jamescbjeon.github.io/studynote/2020/10/05/ibm2-tools-for-data-science.html
+[ibm3]: https://jamescbjeon.github.io/studynote/2020/10/12/ibm3-data-science-methodology.html
+[ibm4]: https://jamescbjeon.github.io/studynote/2020/10/19/ibm4-python-for-ds-n-ai.html
+[ibm5]: https://jamescbjeon.github.io/studynote/2020/10/26/ibm5-databases-n-sql-for-data-science.html
+[ibm6]: https://jamescbjeon.github.io/studynote/2020/11/03/ibm6-data-analysis-with-python.html
+[ibm7]: https://jamescbjeon.github.io/studynote/2020/11/07/ibm7-data-visualization-with-python.html
+[ibm8]: https://jamescbjeon.github.io/studynote/2020/11/10/ibm8-machine-learning-with-python.html
+[ibm9]: https://jamescbjeon.github.io/studynote/2020/11/17/ibm9-applied-data-science-capstone.html
+
 [cheat-sheet-python27]: http://www.astro.up.pt/~sousasag/Python_For_Astronomers/Python_qr.pdf
 [multiple-arg]: https://brunch.co.kr/@princox/180
 [doc-python-exception]: https://docs.python.org/3/library/exceptions.html
-
 
 [ipynb-4-1-1]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-1-Types.ipynb
 [ipynb-4-1-2]: https://github.com/jamescbjeon/ibmDS/blob/master/4/PY0101EN-1-2-Strings.ipynb
