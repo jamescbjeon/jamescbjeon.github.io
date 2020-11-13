@@ -34,19 +34,20 @@ tags: [Data Sceience, Coursera, IBM, Python, EDA, 정리노트]
 
 [Jupyter Notebook - Import][ipynb-6-5-1]
 
-* Python Library Packages
-  1. Scientifics Computing
-    * Pandas : Data structure & tools
-    * Numpy : Array & matrix
-    * Scipy : Integral, soving differential equation, optimization
-  2. Visualization
-    * Matplotlib
-    * Seaborn
-  3. Algorithmic
-    * Scikit-learn : Machine learning - Regression, classification, ...
-    * Stasmodels : Explore data
+### 1.1 Python Library Packages
 
-* Data Import/Export
+1. Scientifics Computing
+  * Pandas : Data structure & tools
+  * Numpy : Array & matrix
+  * Scipy : Integral, soving differential equation, optimization
+2. Visualization
+  * Matplotlib
+  * Seaborn
+3. Algorithmic
+  * Scikit-learn : Machine learning - Regression, classification, ...
+  * Stasmodels : Explore data
+
+### 1.2 Data Import/Export
 
 | Format | Read              | Save            |
 | ------ | ----------------- | --------------- |
@@ -64,12 +65,14 @@ path = 'C:/windows/.../NAME.csv'
 df.to_csv(path)  # 처리된 df를 csv로 저장
 ~~~
 
+### 1.3 Get started
+
 * Overview
   1. `df.head(n)` : 첫 n행 표시 (생략 시, 5행)
   1. `df.tail(n)` : 마지막 n행 표시 (생략 시, 5행)
   1. `df.columns` : Column header 목록을 list 형태로 반환
 
-* Getting started...
+* Attributes & Descriptive statistics
   * `df.dtypes` : 각 열 변수의 type을 반환
   * `df.shape` : 행 x 열의 크기를 반환
   * `df.describes()` : 각 열의 통계값을 반환 (max, min, ...)
@@ -83,13 +86,14 @@ df.to_csv(path)  # 처리된 df를 csv로 저장
     * 선정된 열에서 결측값 확인
     * axis = 0 해당 행 삭제, axis = 1 해당 열 삭제
 
-* Accessing database with Python
-  * Pyton DB API
-    1. Connection object
-      * Database connections
-      * Manage Transaction
-    2. Cursor object
-      * Database queries
+### 1.4 Accessing database with Python
+
+* Python DB API
+  1. Connection object
+    * Database connections
+    * Manage Transaction
+  2. Cursor object
+    * Database queries
 
 ~~~Python
 from dbmodule import connect
@@ -115,25 +119,19 @@ connection.close()
 
 [Jupyter Notebook - Wrangling][ipynb-6-5-2]
 
-* Preprocessing data
-  1. Identify and handle missing Values
-  1. Data formatting
-  1. Data normalization : centering & scaling
-  1. Data binning
-  1. Turn categorical values to numeric values
+### 2.1 Identify and handle missing Values
 
-1. Identify and handle missing Values
-  1. Check with the data collection **source**
-  2. **Drop** missing values
-    * `df.dropna(subset=['COL_NAME'], axis=)`
-      * axis : '0' drop entire row, '1' drop entire column
-      * subset : 해당 열에서 검색
-  3. **Replace**
-    * `df.replace(MISSING_VALUE, NEW_VALUE)`
-  4. **Leave it** as a missing values
-    * 결측치를 검사할 Filter DF 생성
-      1. `df.isnull()` : df 전체에 대해 결측 유무를 bool df로 반환
-      1. `df.notnull()` : `.isnull()`과 반대 결과를 bool df로 반환
+1. Check with the data collection **source**
+2. **Drop** missing values
+  * `df.dropna(subset=['COL_NAME'], axis=)`
+    * axis : '0' drop entire row, '1' drop entire column
+    * subset : 해당 열에서 검색
+3. **Replace**
+  * `df.replace(MISSING_VALUE, NEW_VALUE)`
+4. **Leave it** as a missing values
+  * 결측치를 검사할 Filter DF 생성
+    1. `df.isnull()` : df 전체에 대해 결측 유무를 bool df로 반환
+    1. `df.notnull()` : `.isnull()`과 반대 결과를 bool df로 반환
 
 ~~~Python
 # 예제 - 해당 열의 평균값으로 결측치를 대체
@@ -148,12 +146,13 @@ for col in missing_data.columns.values.tolist():
   print(" ")
 ~~~
 
-2. Data formatting
-  1. 서로 다른 이름을 통일 : ex. 'N.Y', 'New Your', 'NY' --> 'New York'
-  2. Apply calculation to an entire columns : 열별로 전체 계산 후 대체
-  3. Data type cleaing
-    1. Type 확인 : `df.dtype()`
-    2. Type 변경 : `df.astype()`
+### 2.2 Data formatting
+
+1. 서로 다른 이름을 통일 : ex. 'N.Y', 'New Your', 'NY' --> 'New York'
+2. Apply calculation to an entire columns : 열별로 전체 계산 후 대체
+3. Data type cleaing
+  1. Type 확인 : `df.dtype()`
+  2. Type 변경 : `df.astype()`
 
 ~~~Python
 # 예제 - Mile/gal을 L/100km로 계산 후 열 이름 변경
@@ -164,13 +163,15 @@ df.rename(columns = {'city-mpg':'city-L/100km'}, inplace=True)
 df['price'] = df['price'].astype('int')
 ~~~
 
-3. Data normalization : centering & scaling
-  1. Simple feature scaling : New = Old / Max
-  2. Min - max : New = (Old-Min) / (Max-Min)
-  3. Z-score : New = (Old - Mean) / Std --> 보통 +/-3 이내로 수렴
+### 2.3 Data normalization : centering & scaling
 
-4. Data binning
-  * 값들을 Grouping하여 몇 개의 **Bin**에 나누는 것
+1. Simple feature scaling : New = Old / Max
+2. Min - max : New = (Old-Min) / (Max-Min)
+3. Z-score : New = (Old - Mean) / Std --> 보통 +/-3 이내로 수렴
+
+### 2.4 Data binning
+
+값들을 Grouping하여 몇 개의 **Bin**에 나누는 담는 것
 
 ~~~Python
 # 예제 - 'price' 열의 값을 세 개의 라벨로 나눈 새로운 열을 생성
@@ -179,9 +180,9 @@ group_names = ['low, 'medium', 'high']
 df['price-binned'] = pd.cut(df['price'], bins, label=group_names, include-lowest=True)
 ~~~
 
-5. Categorical variables into quantitative variables : **One-hot encoding**
-  * `pd.get_dummies(df['COL_NAME'])`
-    * 개별 카테고리 별로 Dummy variable 생성 --> 0 또는 1을 할당
+### 2.5 Categorical variables into quantitative variables : **One-hot encoding**
+
+`pd.get_dummies(df['COL_NAME'])` : 개별 카테고리 별로 Dummy variable 생성 --> 0 또는 1을 할당
 
 
 ***
@@ -190,56 +191,61 @@ df['price-binned'] = pd.cut(df['price'], bins, label=group_names, include-lowest
 
 [Jupyter Notebook - EDA][ipynb-6-5-3]
 
+### 3.0 Simple Visualization
 
-0. Simple Visualization
-  1. Scatter plot
-    * x-axis : predictor, independent variables   
-      y-axis : target, dependent variables
-    * Continuous variables에 대해 확인
-    * `sns.regplot(x='COL_NAME', y='COL_NAME', data=df)`
-  2. Box plot
-    * Categorical variables에 대해 확인
-    * `sns.boxplot(x='COL_NAME', y='COL_NAME', data=df)`
+1. Scatter plot
+  * x-axis : predictor, independent variables   
+    y-axis : target, dependent variables
+  * Continuous variables에 대해 확인
+  * `sns.regplot(x='COL_NAME', y='COL_NAME', data=df)`
+2. Box plot
+  * Categorical variables에 대해 확인
+  * `sns.boxplot(x='COL_NAME', y='COL_NAME', data=df)`
 
-1. Descriptive statistics (기술 통계량)
-  * EDA 실시 전 데이터 요약정보로 통찰을 얻을 수 있음
-  * `df.decribe()` : 개별 열에 대한 기초 통계 정보 확인
-  * `df.value_counts()` : `.to_frame()`, `to_list()`
-    * Series에만 적용 가능. df에는 적용되지 않음
+### 3.1 Descriptive statistics (기술 통계량)
 
-2. GroupBy
-  * `df.groupby(['Target_COL1, Tar...'], as_index=False).mean()`   
-    : 대상 열로 할당된 기술통계량의 정보를 정리하여 반환
-  * `df.pivot(index='COL_NAME1', columns='COL_NAME2')`   
-    : groupby 결과에 대해 pivot 분리하여 반환
+* EDA 실시 전 데이터 요약정보로 통찰을 얻을 수 있음
+* `df.decribe()` : 개별 열에 대한 기초 통계 정보 확인
+* `df.value_counts()` : `.to_frame()`, `to_list()`
+  * Series에만 적용 가능. df에는 적용되지 않음
 
-3. Correlation
-  * What extent different variables are independent each ohter
-  * **Correlation doen not imply causation.**
+### 3.2 GroupBy
 
-4. Correlation - statistics
-  * Pearson Correlation
-    1. Correlation efficient
-      * Close to +1 : Strong positive relationship
-      * 0 : No relationship
-      * Close to -1 : Strong negative relationship
-    2. P-value
-      * < 0.001 Strong certainty in the result
-      * < 0.05 Moderate certainty in the result
-      * < 0.1 Weak certainty in the result
-      * > 0.1 No certainty
-  * `df.corr()`
-    * xy축에 각 varibles를 할당 후 상관관계 도표를 반환
+* `df.groupby(['Target_COL1, Tar...'], as_index=False).mean()`   
+  : 대상 열로 할당된 기술통계량의 정보를 정리하여 반환
+* `df.pivot(index='COL_NAME1', columns='COL_NAME2')`   
+  : groupby 결과에 대해 pivot 분리하여 반환
+
+### 3.3 Correlation
+
+It measures that what extent different variables are independent each ohter.
+
+> **Correlation doen not imply causation.**
+
+* Pearson Correlation
+  1. Correlation efficient
+    * Close to +1 : Strong positive relationship
+    * 0 : No relationship
+    * Close to -1 : Strong negative relationship
+  2. P-value
+    * < 0.001 Strong certainty in the result
+    * < 0.05 Moderate certainty in the result
+    * < 0.1 Weak certainty in the result
+    * \> 0.1 No certainty
+* `df.corr()`
+  * xy축에 각 varibles를 할당 후 상관관계 도표를 반환
 
 ~~~Python
 # 예제 - Pearson correlation
 p_coef, p_value = stats.pearsonr(df['horsepower'], df['price'])
 ~~~
 
-5. ANOVA - ANalysis Of VariAnce
-  * Finding correlation between different groups of a categorical variable.
-  1. F-score : 표본그룹 평균을 표본그룹 내 분산에 따라 나눈 값 사이의 분산
-  2. p-value : Confidence degree
+### 3.4 ANOVA - ANalysis Of VariAnce
+
+Finding correlation between different groups of a categorical variable.
+
+1. F-score : 표본그룹 평균을 표본그룹 내 분산에 따라 나눈 값 사이의 분산
+2. p-value : Confidence degree
 
 > F-score가 크고, p-value가 작을 수록 해당 분류가 변수에 연관됨을 의미
 
@@ -249,15 +255,148 @@ p_coef, p_value = stats.pearsonr(df['horsepower'], df['price'])
 
 [Jupyter Notebook - Model dev][ipynb-6-5-4]
 
-1. Simple and Multiple Linear Regression
-2. Model Evaluation using Visualization
-3. Polynomial Regression & Pipelines
-4. R-squared and MSE for In-sample Evaluation
-5. Prediction and Decision Making
-
 > Model Development   
 > : Independent variables & features --- **Model** (mathematical equation) ---> Dependent variables (desired prediction)   
 > : More relavant data ==> More accurated result
+
+### 4.1 Linear Regression - Simple and Multiple 
+
+* Linear regression
+  1. Simple : X --> Y
+    * Y = b0 + aX
+    * b0 : intercept (y-shift), a = coef (slope)
+  2. Multiple : X1, ..., Xn --> Y
+    * Y = b0 + aX = b0 + a1 * X1 + ... + an * Xn
+
+* Fit : 주어진 모델에 데이터를 맞추는 것
+  * 결과물로 **coef**, **intercept**를 얻게 됨
+  * SLR, MLR에 관계없이 `LinearRegression()` 객체를 사용하며, lm.fit(X, y)도 동일하다. 단, MLR의 경우, X는 n의 열로 구성되어 있으므로 얻어지는 `lm.coef_`도 n개로 주어진다.
+
+~~~Python
+### Example - Model fit
+
+from sklearn.linear_model import LinearRegression  # Import library
+lm = LinearRegression()  # Create LR object using the consturctor
+
+X = df[['highway=mpg']]  # Define predictor
+y = df['price']  # Define target variables
+
+lm = fit(X, y)  # Fit the model
+print('y-shift: {}, slope: {}'.format(lm.intercept_, lm.coef_))
+
+Yhat = lm.predict(X, y)  # Obtain prediction. 이 때 Yhat에는 모델에 의해 예측된 신규 Y값 목록이 반환. 즉, Yhat - y간 비교를 통해 모델 정확성을 검증 가능
+~~~
+  
+* Noise : 예측치가 모델에서 벗어난 정도
+  * [Noise] = [Prediction] -[Acual data] = Yhat - Y
+
+### 4.2 Model Evaluation using Visualization
+
+* Regression plot gives us...
+  1. Relationship between the variables
+  1. Strength of correlation
+  1. Direction of relationship (+/-)
+
+~~~Python
+### Example - Regression plot
+
+import seaborn as sns
+
+sns.regplot(X = 'highway-mpg', y = 'price', data = df)
+plt.ylim(0, )
+~~~
+
+* Residual plot : 잔차의 분포를 확인
+  * 다음의 경우에는 Model이 실패함을 암시
+    * Not randomly spread out
+    * Variance appears to change with x-axis
+
+~~~Python
+### Example - Residual plot
+
+sns.residplot(X = 'highway-mpg', y = 'price', data = df)
+~~~
+
+* Distribution plot : 분포 곡선 - X 변화에 따른 실제와 예측치 사이의 분포를 확인
+
+~~~Python
+### Example - Distritubion plot
+# 실제 값과 모델 값을 같은 축에 배치하여 비교
+
+ax1 = sns.distplot(df['price], hist=False, color='r', label='Actual value')  # 실제값으로 빨간 분포 곡선 생성
+sns.distplot(Yhat, hist=False, color='b', label='Fitted values', ax=ax1)  # 모델을 통한 예측값을 동일한 그래프에 파란 분포 곡선으로 병기
+~~~
+
+### 4.3 Polynomial Regression
+
+* 1-D Polynomial regression
+  * Y = b0 + a1 * x + ... + an * x^n
+  * Quadratic (2차), Cubic (3차), High-order (그 이상)
+
+
+> Polynoimal regression은 기본적으로 MLR과 처리방식 동일. x, x^2... x^n을 X1, ..., Xn으로 간주하고 MLR 방식으로 모델 생성
+
+~~~Python
+# 별도 library 없이 numpy로 처리 가능
+f = np.polyfit(x, y, n)  # n차 x에 대해 y를 대상으로 model fitting. 이 때 f는 b0, a1, ..., an을 포함하는 array로 반환
+p = np.poly1d(f)  # p는 model fitting과 관련 없음. np.poly1d는 주어진 계수를 가지고 이해하기 쉽게 y = b + aX 형태로 값을 출력.
+~~~
+
+* Multivariate polynomial regression
+  * Y = b0 + a1X1 + a2X2 + a3X1X2 + a4X^2 + ...
+
+~~~Python
+### Example - Multivariate polynomial regression
+
+from sklear.preprocessing import PolynomialFeatures
+
+pr = PolynomialFeatures(degree=2, include_bias=False)  # pr 객체를 생성
+Z_pr = pr.fit_transform(Z)  # 여러 열(Xn)을 가진 Z를 Model fitting. 이 때, Z_pr은 해당 모델에서 예측된 값으로 반환.
+~~~
+
+### 4.4 Pipelines
+
+> Pipeline은 Preprocssing 절차에 필요한 Model을 하나로 모아서 한번에 처리할 수 있게 함으로 작업 효율을 올려 준다.
+
+~~~Python
+### Ex - Pipeline
+
+# Import libraries
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import Pipeline
+
+# Pipeline constructor에 넣을 parameter를 tuple 형태로 준비
+Input = [('scale, StandardScaler()), \
+          ('Polynomial', PolynomialFeatures(include_bias=False), \
+          ('model', LinearRegression())]
+
+pipe = Pipeline(Input)
+pipe.fit(Z, y)
+# Z와 y에 대해 Model fit. 
+# 이 때, 준비된 대로 Pipeline은 Z값을 normalize하고 Polynomial 형태로 변환한 후 Linear regression 모델에 적용한다.
+
+ypipe = pipe.predict(Z, y)  # 모델에 의한 예측값 확보 (yhat)
+~~~
+
+### 4.5 R-squared and MSE for In-sample Evaluation
+
+* **MSE** : Mean squared error
+
+* **R-squared** (R^2) : Coefficient of determination
+  * % of variation of response variable (y) that is explained by a linear model
+  * It indicates how close the data is to the fitted regression line.
+
+> [R-square] = 1 - [MSE of regressionline] / [MSE of the average of data]
+> : 0 to 1 사이의 값으로 반환
+
+
+### 4.6 Prediction and Decision Making
+
+
+
+
 
 
 
@@ -276,7 +415,7 @@ p_coef, p_value = stats.pearsonr(df['horsepower'], df['price'])
 
 
 [coursera-ibm-ds]: https://www.coursera.org/professional-certificates/ibm-data-science
-[coursera-ibm-ds-6]: https://www.coursera.org/learn/data-analysis-with-python/home/welcome
+[coursera-ibm-ds-6]: https://www.coursera.org/learn/data-analysis-with-ipynb/home/welcome
 
 
 [ipynb-6-5-1]: https://github.com/jamescbjeon/ibmDS/blob/master/6/DA0101EN-Review-Introduction.ipynb
