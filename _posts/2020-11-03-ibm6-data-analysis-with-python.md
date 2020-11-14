@@ -410,10 +410,14 @@ yhat = lm.predict(X, Y)  # 예측값 생성
 mean_squared_error(Y, Yhat)  # MSE
 ~~~
 
+> MSE가 작을 수록, R-squared가 1에 가까울 수록 Model이 실제값을 정확히 예측
 
 ### 4.6 Prediction and Decision Making
 
-MSE가 작을 수록, R^2가 1에 가까울 수록 Model이 실제값을 정확히 예측함을 의미
+1. Does the predicted values make sense?
+1. Visualization
+1. Numerical measures for evaluation
+1. Comparing models
 
 
 ***
@@ -421,6 +425,62 @@ MSE가 작을 수록, R^2가 1에 가까울 수록 Model이 실제값을 정확�
 ## 5 Model Evaluation
 
 [Jupyter Notebook - Model eval][ipynb-6-5-5]
+
+### 5.1 Model evaluation and refinement
+
+Train model != Predict new data
+
+1. In-sample data ==> Training, ~70%
+2. Out-of-sample ==> Test, ~30%
+
+~~~Python
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_stat=0)
+~~~
+
+Cross validation
+
+Most common out-of-sample evaluation metrics
+More effective use of data : Each observation is used for train/test.
+
+~~~Python
+from sklearn.model_selection import cross_val_score
+scores = corss_val_score(lr, x_data, y_data, cv = 3)
+
+~~~
+
+### 5.2 Overfit, underfit and model selection
+
+1. Fit : Best!
+1. Underfit : Too simple
+1. Overfit : Too flex
+  * Noise에 대해 과하게 Fitting
+
+~~~Python
+# 여러 차수의 다항식에 대해 R^2 계산
+Rsqu_test = []
+order = [1, 2, 3, 4]
+
+for n in order:
+  pr = PolynomialFeatures(degree =n)
+  x_train_pr = pr.fit_transform(x_train[['horsepower']])
+  x_test_pr = pr.fit_transform(x_test[['horsepower']])
+  lr.fit(x_train, y_train)
+  Rsqu_test.append(lr.score(x_test_pr, y_test))
+~~~
+
+
+### 5.3 Ridge regression
+
+~~~Python
+from sklearn.linear_model import Ridge
+
+RidgeModel = Ridge(alpha = 0.1)
+RidgeModel.fit(X, y)
+Yhat = RidgeModel.predict(X)
+~~~
+
+### 5.4 Grid search
 
 
 ***
