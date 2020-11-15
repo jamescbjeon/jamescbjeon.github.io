@@ -269,7 +269,7 @@ Finding correlation between different groups of a categorical variable.
 > : Independent variables & features --- **Model** (mathematical equation) ---> Dependent variables (desired prediction)   
 > : More relavant data ==> More accurated result
 
-### 4.1 Linear Regression - Simple and Multiple 
+### 4.1 Linear Regression - Simple and Multiple
 
 * Linear regression
   1. Simple : X --> Y
@@ -296,7 +296,7 @@ print('y-shift: {}, slope: {}'.format(lm.intercept_, lm.coef_))
 
 Yhat = lm.predict(X, y)  # Obtain prediction. 이 때 Yhat에는 모델에 의해 예측된 신규 Y값 목록이 반환. 즉, Yhat - y간 비교를 통해 모델 정확성을 검증 가능
 ~~~
-  
+
 * Noise : 예측치가 모델에서 벗어난 정도
   * [Noise] = [Prediction] -[Acual data] = Yhat - Y
 
@@ -384,7 +384,7 @@ Input = [('scale, StandardScaler()), \
 
 pipe = Pipeline(Input)
 pipe.fit(Z, y)
-# Z와 y에 대해 Model fit. 
+# Z와 y에 대해 Model fit.
 # 이 때, 준비된 대로 Pipeline은 Z값을 normalize하고 Polynomial 형태로 변환한 후 Linear regression 모델에 적용한다.
 
 ypipe = pipe.predict(Z, y)  # 모델에 의한 예측값 확보 (yhat)
@@ -428,36 +428,40 @@ mean_squared_error(Y, Yhat)  # MSE
 
 ### 5.1 Model evaluation and refinement
 
-Train model != Predict new data
+Train model과 Predict new data는 다른 영역이며, 이를 사전 검증하기 위해 Model evaluation이 필요하다. 기존에 가진 Sample data를 보통 분리하여 R-squared 등을 평가한다.
 
-1. In-sample data ==> Training, ~70%
-2. Out-of-sample ==> Test, ~30%
+> In-sample data : Training, ~70%   
+> Out-of-sample : Test, ~30%
 
 ~~~Python
 from sklearn.model_selection import train_test_split
-x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_stat=0)
+x_train, x_test, y_train, y_test = train_test_split(x_data, y_data, test_size=0.3, random_state=0)
 ~~~
 
-Cross validation
+#### 5.1.1 Cross validation
 
-Most common out-of-sample evaluation metrics
-More effective use of data : Each observation is used for train/test.
+Most common out-of-sample evaluation metrics.   
+More effective use of data : Each observation is used for train/test.   
+- Dataset을 n개의 fold로 나눈 후, 1개는 test/나머지는 train set을 활용하는 validation을 n번 반복
 
 ~~~Python
 from sklearn.model_selection import cross_val_score
-scores = corss_val_score(lr, x_data, y_data, cv = 3)
+scores = cross_val_score(lr, x_data, y_data, cv=3)  # 결과는 각 fold에 대해 n개 arry로 반환 (이 경우, 3개)
 
+print(scores.mean())  # n개의 R-squared에 대한 평균
+print(scores.std())   # n개의 R-squared에 대한 표준편차
+
+yhat = cross_val_predict(lr, x_data, y_data, cv=3)  # Cross valiation을 활용한 예측도 가능
 ~~~
 
 ### 5.2 Overfit, underfit and model selection
 
 1. Fit : Best!
-1. Underfit : Too simple
-1. Overfit : Too flex
-  * Noise에 대해 과하게 Fitting
+1. **Underfit** : Too simple
+1. **Overfit** : Too flex --> Noise에 대해 과하게 Fitting
 
 ~~~Python
-# 여러 차수의 다항식에 대해 R^2 계산
+# Polinomial fit의 각 n-degree에 대해 R^2 계산
 Rsqu_test = []
 order = [1, 2, 3, 4]
 
@@ -472,6 +476,12 @@ for n in order:
 
 ### 5.3 Ridge regression
 
+alpha값에 따라 Regression 결과의 차이가 발생
+
+> Ridge regression 관련 자료   
+> * [Ridge regression와 Lasso regression 쉽게 이해하기](https://rk1993.tistory.com/entry/Ridge-regression%EC%99%80-Lasso-regression-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)
+> * [ISL 6장 - Lasso, Ridge, PCR이해하기](https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2018/02/07/ISL-Linear-Model-Selection-and-Regularization_ch6.html)
+
 ~~~Python
 from sklearn.linear_model import Ridge
 
@@ -482,6 +492,19 @@ Yhat = RidgeModel.predict(X)
 
 ### 5.4 Grid search
 
+Hyper parameter인 alpha 값을 쉽게 찾게 해주는 Grid search
+
+~~~python
+from sklearn.model_selection import GridSearchCV
+
+parameters1= [{'alpha': [0.001, 0.1, 1, 10, 100, 1000, 10000, 100000, 100000]}]  # 필요한 alpha를 사전에 할당
+RR=Ridge()  # Ridge 객체 생성
+Grid1 = GridSearchCV(RR, parameters1, cv=4)  # Ridge 객체와 alpha 후보를 파라미터에 할당
+Grid1.fit(x_data[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']], y_data)
+
+BestRR = Grid1.best_estimator_  # 최적 alpha 도출. 예제에서는 alpha = 10000
+BessRR.score  # R-squared 확인
+~~~
 
 ***
 
