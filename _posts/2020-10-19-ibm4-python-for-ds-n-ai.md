@@ -3,7 +3,7 @@ layout: post
 title: Python for Data Science and AI
 subtitle: Course summary - IBM Data Science Professinal 4
 categories: StudyNote
-tags: [Data Sceience, Coursera, IBM, Python, 정리노트]
+tags: [Data Science, Coursera, IBM, Python, 정리노트]
 ---
 
 *본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [4. Python for Data Science and AI][coursera-ibm-ds-4]에 대한 정리노트입니다.*

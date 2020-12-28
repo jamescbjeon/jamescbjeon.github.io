@@ -3,7 +3,7 @@ layout: post
 title: Data Analysis with Python
 subtitle: Course summary - IBM Data Science Professinal 6
 categories: StudyNote
-tags: [Data Sceience, Coursera, IBM, Python, EDA, 정리노트]
+tags: [Data Science, Coursera, IBM, Python, EDA, 정리노트]
 ---
 
 *본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [6. Data Analysis with Python][coursera-ibm-ds-6]에 대한 정리노트입니다.*
