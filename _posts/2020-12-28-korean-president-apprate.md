@@ -2,7 +2,7 @@
 layout: post
 title: 데이터에 기반한 대한민국 역대 대통령 지지율 분석
 subtitle: Data Science Practice - Korea President Approving Rate Analysis with Pandas
-categories: Data Science Practice
+categories: Practice
 tags: [Data Science, Pandas, Practice, Korea President]
 ---
 
