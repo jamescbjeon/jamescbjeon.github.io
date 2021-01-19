@@ -2,15 +2,15 @@
 layout: post
 title: Pandas 및 성장도표를 활용한 자녀 성장 도식화
 subtitle: Children growth analysis with Pandas
-categories: StudyNote
-tags: [Pandas, Practice]
+categories: Practice
+tags: [Pandas, Practice, 자녀성장]
 ---
 
-## 1 Introduction - Dataset
+## 1 Introduction
 
 현재 직장에서 Process engineer로 근무한지 벌써 10년이 훌쩍 넘었다. 매일 공정 데이터를 관리하고 분석하는 업의 특성 때문인지 어느 샌가부터 숫자와 이력에 대한 강한 강박이 생겨 버렸다.
 
-가령 두 아이와 조카의 신체 성장 기록을 엑셀 시트로 수 년간 관리했었는데 갑자기 Pandas skill practice 삼아 Notebook version으로 migration 해보는 것도 좋겠다는 생각이 들어 정리를 해보았다
+가령 두 아이와 조카의 신체 성장 기록을 엑셀 시트로 수 년간 관리했었는데 갑자기 Pandas skill practice 삼아 Notebook version으로 migration 해보는 것도 좋겠다는 생각이 들어 정리를 해보았다 ([Jupyter Notebook Link](https://github.com/jamescbjeon/project/blob/main/children-growth/children-growth.ipynb))
 
 일단 File import를 해보자. Dataset은 아래처럼 구성되어 있다.
 
@@ -30,7 +30,7 @@ tags: [Pandas, Practice]
 
 ![modified df.head](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/children-growth-2.PNG)
 
-## 1 개별 성장값 비교 
+## 2 개별 성장값 비교 
 
 세 아이들의 키 성장을 생후개월에 대해 비교해 보자.
 
@@ -90,7 +90,7 @@ Ted는 몸무게가 다른 두 여자 아이 대비 높았지만 BMI는 18~19 �
 ![three kids weight](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/children-growth-5.PNG)
 ![three kids bmi](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/children-growth-6.PNG)
 
-## 3 대한민국 유아청소년 성장도표
+## 3 유아청소년 성장도표
 
 ### 3.1 여아 w/Ariel, Jua
 
@@ -133,7 +133,7 @@ Ariel은 생후 65개월까지 키와 몸무게 모두 중위수 내외에서 �
 ![percentile ariel](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/percentile_ariel.PNG)
 
 Ted는 생후 내내 키에 비해 몸무게가 높은 백분위 수준으로 유지되었다. 하지만 활동에 큰 문제가 없고 최근 키 성장으로 인해 BMI 등이 개선되는 경향이 있어 좀더 지켜볼 예정이다.
-![percentile ted](hhttps://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/percentile_ted.PNG)
+![percentile ted](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/percentile_ted.PNG)
 
 Jua는 Ted와 비슷한 경향성으로 성장하는 모습이다. 최근 Jua 역시 키가 훌쩍 커서 (본 데이터에는 포함되지 않음) 나중에 기회가 되면 측정 및 확인을 해보려고 한다.
 ![percentile jua](https://raw.githubusercontent.com/jamescbjeon/project/main/children-growth/percentile_jua.PNG)
@@ -141,5 +141,3 @@ Jua는 Ted와 비슷한 경향성으로 성장하는 모습이다. 최근 Jua �
 ## 4 글을 마치며
 
 엑셀 시트로 관리하던 내용을 pandas로 재정리해보니 다소 시간이 걸리긴 했지만 재미도 있고 생각치 못한 Insight도 얻은 기분이다. 특히 Scikit-learn을 통한 Linear model 적용이나 백분위값 추적은 엑셀로도 가능하겠지만 pandas로 훨씬 쉽게 적용이 가능하였다.
-
-좀 더 공부하여 단순한 비교나 도식화를 넘어 알찬 내용의 글을 쓸 수 있도록 노력해야겠다.
