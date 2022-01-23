@@ -2,7 +2,7 @@
 layout: post
 title: Pandas 및 성장도표를 활용한 자녀 성장 도식화
 subtitle: Children growth analysis with Pandas
-categories: Practice
+categories: Pandas
 tags: [Pandas, Practice, 자녀성장]
 ---
 

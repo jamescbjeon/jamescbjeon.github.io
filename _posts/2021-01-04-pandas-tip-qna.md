@@ -2,7 +2,7 @@
 layout: post
 title: Python pandas Q&A video series by Data School
 subtitle: YouTube Tutorial by Kevin Markham
-categories: StudyNote
+categories: Pandas
 tags: [Data Science, Pandas, 정리노트]
 ---
 

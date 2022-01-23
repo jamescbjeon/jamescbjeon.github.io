@@ -2,7 +2,7 @@
 layout: post
 title: Applied Data Science Capstone
 subtitle: Course summary - IBM Data Science Professinal 9
-categories: StudyNote
+categories: IBM Data Science
 tags: [Data Sceience, Coursera, IBM, Python, Capstone]
 ---
 

@@ -1,10 +1,13 @@
 ---
 layout: post
-title: 책 - 완벽한 제무재표 읽기
-subtitle: 책 - 완벽한 제무재표 읽기
+title: (책리뷰) 완벽한 재무제표 읽기
+subtitle: Book review - 대한민국 주식투자자를 위한 완벽한 재무제표 읽기 (이강연/비지니스북스)
 categories: Investment
-tags: [재무제표, 투자, 책]
+tags: [재무제표, 주식투자, Book Review]
 ---
+
+![대한민국 주식투자자를 위한 완벽한 재무제표 읽기](http://image.kyobobook.co.kr/images/book/xlarge/480/x9791162540480.jpg)
+
 ## 0 들어가기 전에
 
 **재무상태표, Statement of Financial Position**

@@ -2,7 +2,7 @@
 layout: post
 title: Data Science Methodology
 subtitle: Course summary - IBM Data Science Professinal 3
-categories: StudyNote
+categories: IBM Data Science
 tags: [Data Sceience, Coursera, IBM, CRISP-DM, 정리노트]
 ---
 

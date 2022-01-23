@@ -2,7 +2,7 @@
 layout: post
 title: Tools for Data Science
 subtitle: Course summary - IBM Data Science Professinal 2
-categories: StudyNote
+categories: IBM Data Science
 tags: [Data Sceience, Coursera, IBM, Introduction, 정리노트]
 ---
 

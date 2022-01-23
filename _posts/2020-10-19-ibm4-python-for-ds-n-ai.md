@@ -1,23 +1,23 @@
 ---
 layout: post
-title: Python for Data Science and AI
+title: IBM4 - Python for Data Science and AI
 subtitle: Course summary - IBM Data Science Professinal 4
-categories: StudyNote
+categories: IbmDataScience
 tags: [Data Science, Coursera, IBM, Python, 정리노트]
 ---
 
 *본 포스트는 [IBM Data Science 특화 과정][coursera-ibm-ds] 중 [4. Python for Data Science and AI][coursera-ibm-ds-4]에 대한 정리노트입니다.*
 
 > IBM Data Science 전문가 과정 : 정리노트
-  1. [What is Data Science?][ibm1]
-  1. [Tools for Data Science][ibm2]
-  1. [Data Science Methodology][ibm3]
+  1. What is Data Science?
+  1. Tools for Data Science
+  1. Data Science Methodology
   1. [Python for Data Science and AI][ibm4]
-  1. [Databases and SQL for Data Science][ibm5]
+  1. Databases and SQL for Data Science
   1. [Data Analysis with Python][ibm6]
   1. [Data Visualization with Python][ibm7]
-  1. [Machine Learning with Python][ibm8]
-  1. [Applied Data Science Capstone][ibm9]
+  1. [Machine Learning with Python
+  1. Applied Data Science Capstone
 
 > Jupyter notebook
   * [Type][ipynb-4-1-1]

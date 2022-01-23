@@ -2,7 +2,7 @@
 layout: post
 title: Databases and SQL for Data Science
 subtitle: Course summary - IBM Data Science Professinal 5
-categories: StudyNote
+categories: IBM Data Science
 tags: [Data Sceience, Coursera, IBM, SQL, Database, 정리노트]
 ---
 

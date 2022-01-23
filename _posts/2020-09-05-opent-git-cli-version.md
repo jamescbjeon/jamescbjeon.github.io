@@ -2,7 +2,7 @@
 layout: post
 title: Git CLI 버전관리
 subtitle: 생활코딩 Git CLI 버전관리 정리노트
-categories: StudyNote
+categories: Git
 tags: [Git, CLI, 버전관리, 생활코딩, 정리노트]
 ---
 
@@ -18,10 +18,10 @@ tags: [Git, CLI, 버전관리, 생활코딩, 정리노트]
   1. ~~Cherry pick & rebase~~
   1. ~~Github pull request~~
 
-[git1]: https://jamescbjeon.github.io/markdown/2020/09/05/opent-git-cli-version.html
-[git2]: https://jamescbjeon.github.io/markdown/2020/09/06/opent-git-cli-branch.html
-[git3]: https://jamescbjeon.github.io/markdown/2020/09/07/opent-git-cli-backup.html
-[git4]: https://jamescbjeon.github.io/markdown/2020/09/08/opent-git-cli-collaboration.html
+[git1]: https://jamescbjeon.github.io/Git/2020/09/05/opent-git-cli-version.html
+[git2]: https://jamescbjeon.github.io/Git/2020/09/06/opent-git-cli-branch.html
+[git3]: https://jamescbjeon.github.io/Git/2020/09/07/opent-git-cli-backup.html
+[git4]: https://jamescbjeon.github.io/Git/2020/09/08/opent-git-cli-collaboration.html
 [git-cli-version]: https://opentutorials.org/course/3839
 
 ***

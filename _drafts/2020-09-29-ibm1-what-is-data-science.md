@@ -2,7 +2,7 @@
 layout: post
 title: What is Data Science?
 subtitle: Course summary - IBM Data Science Professinal 1
-categories: StudyNote
+categories: IBM Data Science
 tags: [Data Sceience, Coursera, IBM, Introduction, 정리노트]
 ---
 
