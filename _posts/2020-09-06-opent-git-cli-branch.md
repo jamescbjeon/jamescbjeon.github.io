@@ -18,10 +18,10 @@ tags: [Git, CLI, Branch, Conflict, 생활코딩, 정리노트]
   1. ~~Cherry pick & rebase~~
   1. ~~Github pull request~~
   
-[git1]: https://jamescbjeon.github.io/Git/2020/09/05/opent-git-cli-version.html
-[git2]: https://jamescbjeon.github.io/Git/2020/09/06/opent-git-cli-branch.html
-[git3]: https://jamescbjeon.github.io/Git/2020/09/07/opent-git-cli-backup.html
-[git4]: https://jamescbjeon.github.io/Git/2020/09/08/opent-git-cli-collaboration.html
+[git1]: https://jamescbjeon.github.io/git/2020/09/05/opent-git-cli-version.html
+[git2]: https://jamescbjeon.github.io/git/2020/09/06/opent-git-cli-branch.html
+[git3]: https://jamescbjeon.github.io/git/2020/09/07/opent-git-cli-backup.html
+[git4]: https://jamescbjeon.github.io/git/2020/09/08/opent-git-cli-collaboration.html
 [git-cli-branch]: https://opentutorials.org/course/3840
 
 
