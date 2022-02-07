@@ -1,32 +1,49 @@
 $dark-background-color:       #0e0e0e !default;
+$dark-text-color: #bbb !default;
 
 html[data-theme="dark"]  {
-
   &[data-scroll-status='top'] {
-    .site-footer-inner {
-      border-top: solid 1px #2f2f2f !important;
-      transition: 0s;
+    header.site-header-transparent {
+      &.site-header {
+        @include media-query($on-laptop) {
+          .page-link {
+            color: #f8f8f8;
+          }
+        }
+      }
+    }
+
+    footer.site-footer {
+      .site-footer-inner {
+        border-top: solid 1px #2f2f2f !important;
+        transition: 0s;
+      }
     }
   }
 
   body {
-    color: #bbb;
+    color: $dark-text-color;
     background-color: $dark-background-color;
   }
 
   *:not(pre) > code {
-    background-color: #545454;
+    color: $dark-text-color;
+    background-color: #454545;
+  }
+
+  blockquote {
+    border-left: 4px solid #484848;
   }
 
   table {
     color: #9d9d9d;
 
     th {
-      background-color: #000;
+      background-color: #050505;
     }
 
     tr:nth-child(even) {
-      background-color: #111;
+      background-color: #080808;
     }
   }
 
@@ -48,10 +65,21 @@ html[data-theme="dark"]  {
     .ct-language-dropdown {
       color: #f8f8f8;
       background-color: $dark-background-color;
+      box-shadow: 0 0 3px 1px #0000005b;
     }
 
     .ct-language-selected, .ct-language-dropdown li:hover {
       background-color: #222 !important;
+    }
+
+    @include media-query($on-laptop) {
+      .menu-icon > svg {
+          fill: rgba($dark-text-color, 80%);
+      }
+
+      .site-nav input:checked ~ .trigger {
+        background-color: #090909;
+      }
     }
   }
 
@@ -67,14 +95,14 @@ html[data-theme="dark"]  {
   .page-banner {
     .page-banner-img {
       & > *:first-child {
-        opacity: 0.8;
+        opacity: 0.718;
       }
     }
   }
 
   .pagination {
     .post-link {
-      color: #bbb;
+      color: $dark-text-color;
     }
 
     .post-title {
@@ -171,7 +199,7 @@ html[data-theme="dark"]  {
         }
 
         a {
-          color: #bbb;
+          color: $dark-text-color;
         }
 
         a:hover {

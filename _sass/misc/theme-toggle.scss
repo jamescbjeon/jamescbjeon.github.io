@@ -1,10 +1,10 @@
 .theme-toggle {
   position: relative;
-  width: 102px;
+  width: $base-font-size * 7.65;
   margin-top: 10px;
   margin-right: 60px;
   margin-left: auto;
-  transition: 0.1s all ease-in-out;
+  transition: .3s cubic-bezier(.4,.03,0,1);
 
   label, .toggle {
     border-radius: 100px;
@@ -69,7 +69,7 @@
   }
 
   @include media-query($on-palm) {
-    width: 94px;
+    width: $base-font-size * 6.65;
     margin-right: 20px;
 
     .names {
