@@ -13,7 +13,8 @@
 {% else %}
   {% assign excerpt_size = excerpt_size
     | default: site.excerpt_size
-    | default: 350 %}
+    | default: 150 %}
+    <!-- 초기값 350%. 초기화면에서 개별 포스트 하단 일부발췌 길이를 조절 -->
 {% endif %}
 
 {%- include functions.html func='get_article_words' -%}
