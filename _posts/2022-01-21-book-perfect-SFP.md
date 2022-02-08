@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (책리뷰) 완벽한 재무제표 읽기
+title: 책 - 완벽한 재무제표 읽기
 subtitle: Book Review - 대한민국 주식투자자를 위한 완벽한 재무제표 읽기 (이강연/비지니스북스)
 categories: Investment
 tags: [재무제표, 주식투자, Book Review]
