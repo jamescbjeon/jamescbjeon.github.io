@@ -11,7 +11,7 @@ tags: [Jekyll, GitPage, Blog, Ruby Gem]
 
 현재 블로그는 [Github Page][ghpage]라는 서비스를 이용 중인데 별도의 동적 지원이 필요하지 않다면, 무료로 제공되고 무엇보다 Github와 완벽하게 연동되기 때문에 상당히 만족하면서 사용 중이다. [Tstory](https://www.tistory.com/)나 [Medium](https://medium.com/)은 직관적이고 간결한 서비스를 제공하는데 반해 Git Page는 개발자용이다 보니 자유도가 높다는 게 가장 큰 장점인 것 같다 ~~(github.io 주소가 사실 가장 간지남...)~~.
 
-[Github Page][ghpage]는 [Jekyll][jk]이라는 Ruby 기반의 엔진으로 작동하는 데 지금까지 블로그만 생성해서 사용했을 뿐 내부에서 [Jekyll][jk]이 어떻게 구동되는지에 대해 거의 아는 게 없었다. 관련해서 [Mike Dane](https://www.youtube.com/channel/UCvmINlrza7JHB1zkIOuXEbw)이라는 Youtuber가 좋은 Tutorial을 작성하여 공부한 내용을 아래에 정리해본다. 19개의 약 5분 내외의 짧은 동영상으로 구성되어 있어 1시간 정도면 기본적인 내용을 모두 훑을 수 있다.
+[Github Page][ghpage]는 [Jekyll][jk]이라는 Ruby 기반의 엔진으로 작동하는 데 지금까지 블로그만 생성해서 사용했을 뿐 내부에서 [Jekyll][jk]이 어떻게 구동되는지에 대해 거의 아는 게 없었다. 관련해서 [Mike Dane](https://www.youtube.com/channel/UCvmINlrza7JHB1zkIOuXEbw)의 Youtube channel의 Tutorial을 공부한 내용을 아래에 정리해본다. 19개의 약 5분 내외의 짧은 동영상으로 구성되어 있어 1시간 정도면 기본적인 내용을 모두 훑을 수 있다.
 
 물론 언제나 가장 좋은 자료는 [공식 문서](https://jekyllrb.com/docs/)이다.
 
@@ -32,10 +32,10 @@ tags: [Jekyll, GitPage, Blog, Ruby Gem]
 Mac의 경우, Ruby 및 Gem이 기본적으로 탑재되어 있다. 따라서 Version 확인 후 바로 `gem`을 통해 `jekyll`을 바로 설치 가능하다.
 
 ~~~Bash
-~ $ ruby -v		# Ruby 설치여부 및 버젼확인
-~ $ gem -v		# Gem 설치여부 및 버젼확인
+~ $ ruby -v   # Ruby 설치여부 및 버젼확인
+~ $ gem -v   # Gem 설치여부 및 버젼확인
 ~ $ gem install bundler jekyll	# jekyll 엔진 설치
-~ $ jekyll -v	# jekyll 설치여부 및 버젼확인
+~ $ jekyll -v   # jekyll 설치여부 및 버젼확인
 ~~~
 
 ### 3 Windows Installation
@@ -43,22 +43,23 @@ Mac의 경우, Ruby 및 Gem이 기본적으로 탑재되어 있다. 따라서 Ve
 ### 4 [Creating a Site](https://youtu.be/pxua_1vyFck)
 
 ~~~Bash
-~ $ jekyll new my-blog	# jekyll이 구동될 신규 블로그 폴더 생성 (minima theme이 기본테마)
+~ $ jekyll new my-blog	# jekyll이 구동될 신규 블로그 폴더 생성
 ~ $ cd my-blog	# 생성된 블로그 폴더로 이동
 ~/my-blog $ bundle exec jekyll serve	# Now browse to http://localhost:4000
 ~~~
 
 * Command
-	* `jekyll new BLOG_NAME` : 신규 폴더 및 기본 양식으로 블로그 생성
+	* `jekyll new BLOG_NAME` : 신규 폴더 및 기본 양식으로 블로그 생성  (default theme: minima)
 	* `bundle exec jekyll serve` : Local host에 블로그 페이지 생성 
-		* 처음 혹은 _config.yml 변경 시에만 필요
+		* 최초 혹은 _config.yml 변경 시에만 필요
+		* 이후부터는 `jekyll serve`로 구동해도 무방
 		* http://127.0.0.1:4000/에서 조회 가능
 * Folder
 	* `_posts` : 작성된 Post를 저장하는 폴더. Markdown으로 작성 (.md)
 	* `_site` : Website final version - 작성된 Markdown 등의 문서를 jekyll에서 Compile 한 후 Web에서 호스트 되는 최종 HTML 파일
 * File
 	* `_config.yml` : 세팅 - key value pair & parameters
-	* `Gemfile` : Jekyll dependency - Theme 등 (초기값은 minima 테마)
+	* `Gemfile` : Jekyll dependency - Theme 등
 	* `index.md`	: Home - 블로그 초기 페이지
 	* `about.md`	: About 페이지
 
@@ -67,6 +68,7 @@ Mac의 경우, Ruby 및 Gem이 기본적으로 탑재되어 있다. 따라서 Ve
 * Front Matter
 	* 개별 post의 가장 상단에 `---`로 정의된 페이지 속성 정보를 포함 (`.yml`)
 	* 해당 정보로 jekyll이 개별 페이지 Rendering을 통해 HTML을 생성
+* `layout` 특성은 Customized 가능: 신규 생성 및 추후 변경 등 가능
 
 ~~~Markdown
 ---
@@ -74,13 +76,10 @@ layout : post 		# Templete 정보. 없으면 템플릿 미생성
 title : "Welcome To Jekyll!"		# Post 제목. 없으면 파일 이름에서 추출
 date : 2017-09-24 15:58:59 -0700 	# Post 일자. 없으면 파일 이름에서 추출
 categories: jekyll update 
-
 ---
 ~~~
 
-* Post URL 생성 : *categories/년/월/일/title with hyphen.html*
-	* ex. *https://jamescbjeon.github.io/investment/2022/01/21/book-perfect-SFP.html*
-* `layout` 특성은 Customized 가능: 신규 생성 및 추후 변경 등 가능
+
 
 
 ### 6 [Writing Posts](https://youtu.be/gsYqPL9EFwQ)
@@ -89,7 +88,10 @@ categories: jekyll update
 	* `_posts` 폴더에 새 파일 생성
 		* `_posts` 내에 Subfolder 생성 및 개별 분류해도 동일하게 처리. 실제 웹페이지에서는 변화 없어 관리 용이
 	* Markdown (`.md`)으로 작성
-	* Naming convention : `yyyy-mm-dd-name-with-hipens.md`
+	* Naming convention : `yyyy-mm-dd-name-with-hyphens.md`
+* Post URL 생성 : *categories/년/월/일/title-with-hyphens.html*
+	* ex. *https://jamescbjeon.github.io/investment/2022/01/21/book-perfect-SFP.html*
+
 
 
 ### 7 [Working with Drafts](https://youtu.be/X8jXkW3k2Jg)
@@ -214,7 +216,7 @@ theme: jekyll-theme-yat
 	Command
 [% else %]
 	Command
-[% end if %]
+[% endif %]
 
 ### (Example 1) 페이지 제목이 "My First Post"일 경우, 출력
 
@@ -234,7 +236,7 @@ theme: jekyll-theme-yat
 `_data` : 필요한 데이터 파일을 저장. 다른 파일에서 data 파일에 접근 가능
 
 ~~~
-### Example. Site 내 _data 폴더의 people.yml 데이터 파일에서 For-loop를 통해 이름/직업을 출력
+### Example. Site 내 _data 폴더의 people.yml 데이터 파일에서 loop를 통해 이름/직업을 출력
 
 [% for person in site.data.people %]
 	[[ person.name ]], [[ person.occupation ]] <br>
