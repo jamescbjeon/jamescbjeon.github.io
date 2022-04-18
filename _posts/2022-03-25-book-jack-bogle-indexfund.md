@@ -12,12 +12,12 @@ tags: [존 보글, 인덱스펀드, 주식투자, Book Review]
 
 > 존 보글은 미국 투자자들과 나의 영웅입니다. 투자자를 위해 가장 많은 일을 한 사람을 기리는 조각상이 세워진다면 그건 바로 존 보글의 것이어야 합니다 *- 워런 버핏*
 
-<iframe width="400" height="250" src="https://www.youtube.com/embed/MLgn_kVKjCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/MLgn_kVKjCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 존 보글에 대한 Wiki 페이지는 다음과 같다: [나무위키](https://namu.wiki/w/%EC%A1%B4%20%EB%B3%B4%EA%B8%80), [영문위키](https://en.wikipedia.org/wiki/John_C._Bogle)
 
-회장님은 인덱스 펀드의 위대함을 널리 설파하시기 위해 글도 많이 쓰셨는데 그 중 책 한 권을 모조리 할애해 뱅가드 인덱스 펀드를 살 것을 강력하게 주장하셔ㅆ다. 그 책이 바로, "모든 주식을 소유하라" 이다. ~~*결론은 니가 아무리 잘해봤자 시장을 이기지는 못할껄.*~~
+회장님은 인덱스 펀드의 위대함을 널리 설파하시기 위해 글도 많이 쓰셨는데 그 중 책 한 권을 모조리 할애해 뱅가드 인덱스 펀드를 살 것을 강력하게 주장하셨다. 그 책이 바로, "모든 주식을 소유하라" 이다. ~~*결론은 니가 아무리 잘해봤자 시장을 이기지는 못할껄.*~~
 
 <img src="http://image.kyobobook.co.kr/images/book/xlarge/923/x9791188096923.jpg" alignment="center" alt="모든 주식을 소유하라" width="350">
 

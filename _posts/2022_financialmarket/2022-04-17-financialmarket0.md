@@ -12,8 +12,8 @@ Topics Covered in this Course
 	* Risk
 	* Insurance
 	* Diversification
+	* History of finance
 * Week 2
-    * History of finance
 	* Innovation
 	* Efficient markets
 	* Behavioral finance

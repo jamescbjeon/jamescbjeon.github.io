@@ -39,6 +39,7 @@ Dodd Frank Act (2010)는 최소 3가지 경제 상황에 대해 스트레스 테
 	* Law of Large number 적용을 받지 않음
 		* Stock market is not independent. 즉, 서로 강한 연관이 있음
 * Return이 크면 변동성도 크다. ~~*과연 견딜 수 있을까?*~~
+
 ![SP500](/assets/images/post-2022-04-17/fm-w1-1.png)
 
 ### 2.4 Beta
@@ -130,7 +131,7 @@ Law of large numbers means that spreading over many independent assets reduces r
 자본자산의 기대수익과 위험의 관계를 설명하는 모형.  
 즉 자본자산평가 모델은 개별종목의 총위험을 시장에 연관되어 나타나는 위험(체계적 위험)과 시장과 상관없이 나타나는 위험(비체계적 위험)으로 분류하고 시장과 상관없이 나타나는 위험은 분산투자에 의해 제거될 수 있다고 본다.
 
-![CAPM](/assets/images/post-2022-04-17/CAPM.png){: width='400'}
+![CAPM](/assets/images/post-2022-04-17/capm.png){: width='400'}
 
 CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가능하다.
 
@@ -148,7 +149,7 @@ CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가�
 
 ### 4.3 Short Sales
 
-보유주식를 음의 값을 가질 수 있음 &rarr; 공매도 (Short Sale)
+보유주식을 음의 값으로 가질 수 있음 &rarr; 공매도 (Short Sale)
 
 ### 4.4 Calculating the Optimal Portfolio
 
@@ -165,15 +166,14 @@ CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가�
 
 1. 포트폴리오 구성에 따라 위험과 기대 수익이 변화한다. 이는 개인의 위험회피 성향에 따라 변화 가능하다.
 2. Efficient Frontier, 즉 최적포트폴리오 이하의 자산구성은 더 나은 구성을 위해 노력해야 한다. 반면 Frontier line 외곽을 성취하는 것은 불가능하다.
+![Efficient Frontier 1](/assets/images/post-2022-04-17/fm-w1-7.png)
+
 3. 여러 자산을 포함함으로써 Efficient Frontier를 위로 밀어낼 수 있다. 가령 원자재를 포함할 경우, 동일한 위험에서 더 높은 수익을 기대할 수 있다.
-
- ![Efficient Frontier 1](/assets/images/post-2022-04-17/fm-w1-7.png)
-
  ![Efficient Frontier 2](/assets/images/post-2022-04-17/fm-w1-8.png)
 
 ### 4.6 [Gordon Growth Model](https://www.investopedia.com/terms/g/gordongrowthmodel.asp)
 
-`고든성장 모형, GGM` : 일정한 성장률을 갖는 자산에 대한 현재가치 산출법
+`고든성장모형, GGM` : 일정한 성장률을 갖는 자산에 대한 현재가치 산출법
 ~~~
 Pv = X / (r - g)
 현재 자산가치 평가액 = 배당액 / ( 할인률 - 성장률 )
@@ -182,5 +182,5 @@ g: 성장률 (또는 배당금 기대성장률)
 r: 할인률 Discount rate (또는 회사의 자기자본 고정비용 혹은 기대수익률)
 ~~~
 
-* r은 Risk 요소이다. 무위험 자산일 경우 r = 무위험수익률, 위험자산 일 경우 beta값을 통해 r값 상승되어 현재평가가치 하락된다.
+* r은 Risk 요소이다. 무위험자산일 경우 r = 무위험수익률이며, 위험자산일 경우 beta값을 통해 r값이 상승하여 현재평가가치 Pv는 하락한다.
 * g가 (-)라도 현재가격이 평가가치보다 낮다면 투자할 가치가 있다.
