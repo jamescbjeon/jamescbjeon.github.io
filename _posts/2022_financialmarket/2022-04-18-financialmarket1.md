@@ -39,7 +39,7 @@ Dodd Frank Act (2010)는 최소 3가지 경제 상황에 대해 스트레스 테
 	* Law of Large number 적용을 받지 않음
 		* Stock market is not independent. 즉, 서로 강한 연관이 있음
 * Return이 크면 변동성도 크다. ~~*과연 견딜 수 있을까?*~~
-![SP500](/assets/images/post-2022-04-17/fm-w1-1.PNG)
+![SP500](/assets/images/post-2022-04-17/fm-w1-1.png)
 
 ### 2.4 Beta
 ```
@@ -63,7 +63,7 @@ return(i)
 > 국채수익률 return(free) 3%, S&P500 수익률 11%, beta 3.0일 경우,  
 > [기대수익률, return(i)] = 3 + 3 x (11 - 3) = 27%
 
-![SP500](/assets/images/post-2022-04-17/fm-w1-2.PNG)
+![SP500](/assets/images/post-2022-04-17/fm-w1-2.png)
 
 ### 2.5 Distribution & Outlier
 
@@ -74,7 +74,7 @@ return(i)
 	* 따라서 분포가 정규분포를 이루지 않음.
 		* `Cauchy` 혹은 `Fat-tailed` 형태로 분포 &rarr; Outlier/Black-swan 출몰
 
-![Fat tailed curve](/assets/images/post-2022-04-17/fm-w1-3.PNG)
+![Fat tailed curve](/assets/images/post-2022-04-17/fm-w1-3.png)
 
 
 ## 3 Insurance
@@ -130,13 +130,13 @@ Law of large numbers means that spreading over many independent assets reduces r
 자본자산의 기대수익과 위험의 관계를 설명하는 모형.  
 즉 자본자산평가 모델은 개별종목의 총위험을 시장에 연관되어 나타나는 위험(체계적 위험)과 시장과 상관없이 나타나는 위험(비체계적 위험)으로 분류하고 시장과 상관없이 나타나는 위험은 분산투자에 의해 제거될 수 있다고 본다.
 
-![CAPM](/assets/images/post-2022-04-17/CAPM.PNG){: width='400'}
+![CAPM](/assets/images/post-2022-04-17/CAPM.png){: width='400'}
 
 CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가능하다.
 
 ### 4.3 Risk & Return Pyramid
 
- ![Risk and Return Pyramid](/assets/images/post-2022-04-17/fm-w1-4.PNG)
+ ![Risk and Return Pyramid](/assets/images/post-2022-04-17/fm-w1-4.png)
 
 ### 4.4 Equity Premium Puzzle
 
@@ -157,9 +157,9 @@ CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가�
 	* **Negative Covariance(음의 공분산) 포함 시, 전체 위험도는 감소**
 	* 즉, 기대수익을 높이면서 전체 자산위험은 감소시키는 것이 가능
 
- ![Optimal Portfolio Calc 1](/assets/images/post-2022-04-17/fm-w1-5.PNG)
+ ![Optimal Portfolio Calc 1](/assets/images/post-2022-04-17/fm-w1-5.png)
  
- ![Optimal Portfolio Calc 2](/assets/images/post-2022-04-17/fm-w1-6.PNG)
+ ![Optimal Portfolio Calc 2](/assets/images/post-2022-04-17/fm-w1-6.png)
 
 ### 4.5 Efficient Frontier
 
@@ -167,9 +167,9 @@ CAPM에서 위험-수익의 관계를 베타(β)로 함축적으로 확인 가�
 2. Efficient Frontier, 즉 최적포트폴리오 이하의 자산구성은 더 나은 구성을 위해 노력해야 한다. 반면 Frontier line 외곽을 성취하는 것은 불가능하다.
 3. 여러 자산을 포함함으로써 Efficient Frontier를 위로 밀어낼 수 있다. 가령 원자재를 포함할 경우, 동일한 위험에서 더 높은 수익을 기대할 수 있다.
 
- ![Efficient Frontier 1](/assets/images/post-2022-04-17/fm-w1-7.PNG)
+ ![Efficient Frontier 1](/assets/images/post-2022-04-17/fm-w1-7.png)
 
- ![Efficient Frontier 2](/assets/images/post-2022-04-17/fm-w1-8.PNG)
+ ![Efficient Frontier 2](/assets/images/post-2022-04-17/fm-w1-8.png)
 
 ### 4.6 [Gordon Growth Model](https://www.investopedia.com/terms/g/gordongrowthmodel.asp)
 
