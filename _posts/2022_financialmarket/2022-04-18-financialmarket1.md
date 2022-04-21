@@ -6,6 +6,7 @@ categories: Investment
 tags: [로버트 실러, 금융공학, 시장경제, Coursera]
 ---
 
+[Week 1 - Course material]({{ site.url }}/assets/pdf/financialmarket/financialmarket_w1.pdf)
 
 ## 1 Welcome to the Course
 

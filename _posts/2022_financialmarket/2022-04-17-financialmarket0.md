@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Financial Markets Curriculum
+title: Financial Markets in Coursera
 subtitle: 로버트 실러 교수님이 알려주시는 시장 금융 교육
 categories: Investment
 tags: [로버트 실러, 금융공학, 시장경제, Coursera]
@@ -13,7 +13,7 @@ Topics Covered in this Course
 	* Insurance
 	* Diversification
 	* History of finance
-* Week 2
+* [Week 2]({% post_url 2022-04-21-financialmarket2 %})
 	* Innovation
 	* Efficient markets
 	* Behavioral finance
