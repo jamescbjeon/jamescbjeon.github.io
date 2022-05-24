@@ -1,12 +1,26 @@
 ---
 layout: post
 title: Innovation, Efficient markets, Behavioral finance
-subtitle: Financial Markets - Week2
+subtitle: Financial Markets - Week 2
 categories: Investment
-tags: [로버트 실러, 금융공학, 시장경제, Coursera]
+tags: [로버트 실러, 효율적 시장 가설, 행동경제학 Coursera]
 ---
 
-[Week 2 - Course material]({{ site.url }}/assets/pdf/financialmarket/financialmarket_w2.pdf)
+Rober J. Shiller 교수님의 [Financial Market 강좌]({% post_url 2022-04-17-financialmarket0 %}) 중 2주차 요약이다. 유한 책임, 물가연동채권과 같은 금융 시장의 혁신 사례 및 효율적 시장 가설과 현재 할인 가치 (PDV), 그리고 전통 경제학에서 설명되지 않은 비합리성을 다룬 행동 경제학에 대해 공부한다.
+
+## 0 Goal
+
+1. 혁신
+	* 유한 책임의 개념과 심리학, 리스크 다양화 및 기업 재무와의 연관성
+	* 인플레이션 지수 채권(IID)와 하이퍼 인플레이션 해결을 위해 고안된 통화 혁신
+2. Efficient Market
+	* 효율적 시장 가설의 핵심 직관과 정의, 그리고 왜 절반의 진실인가
+	* 현재 할인 가치 (PDV) - 부동산 시장의 기본, 주식 시장 예측에 대한 가정, 그리고 주식 가격을 매기기 위한 기본 프레임워크
+3. 행동 경제학
+	* 전망이론 - 가치함수 & 무게함수
+	* 희망적 사고 편향과 인지 부조화
+	* 반사회적 인격장애와 경계선 인격장애
+
 
 ## 1 Innovation
 
@@ -18,7 +32,7 @@ tags: [로버트 실러, 금융공학, 시장경제, Coursera]
 
 ### 1.2 Limited Liability
 
-유한책임법
+`유한책임법`
 
 1811년 뉴욕주에서부터 시작. 주주의 책임을 제한하여, 투자 부담을 줄이고 많은 자본을 끌어오는 원동력 역할을 함
 
@@ -131,3 +145,5 @@ Random walk에 대해 익숙한 패턴을 찾는 경향. 패턴을 만들어 주
 * Antisocial personality disorder 반사회적 성격장애
 
 
+[Course material - Week 2]({{ site.url }}/assets/pdf/financialmarket/financialmarket_w2.pdf)  
+[Coursera - Financial Market - Week 2](https://www.coursera.org/learn/financial-markets-global/home/week/2)

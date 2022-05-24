@@ -3,10 +3,26 @@ layout: post
 title: Risk, Insurance, Portfolio Diversification
 subtitle: Financial Markets - Week 1
 categories: Investment
-tags: [로버트 실러, 금융공학, 시장경제, Coursera]
+tags: [로버트 실러, Risk, Insurance, CAPM, Coursera]
 ---
 
-[Week 1 - Course material]({{ site.url }}/assets/pdf/financialmarket/financialmarket_w1.pdf)
+Rober J. Shiller 교수님의 [Financial Market 강좌]({% post_url 2022-04-17-financialmarket0 %}) 중 1주차 요약이다. 주식 시장의 변동 및 위험에 대한 소개, Risk 관리를 위한 보험 상품, 그리고 효율적 시장 가설 - CAPM에 대해 다룬다.
+
+## 0 Goal
+
+1.  변동
+	* 주식 시장의 위험 출처 및 전체 포트폴리오 위험 평가법
+	* 투자가 고위험으로 간주되는 이유
+	* 정규분포(Normal) vs. 굵은 꼬리분포(Fat-tail Distribution)
+2. 보험
+	* 보험의 역사 및 주요 사건, 그리고 미국 내 주와 국가 수준 사이에 보험 차이
+	* 위험 풀링 (Risk Pooling), 도덕적 해이(Moral Hazard) 및 선택 편향(Selection Bias)
+3. CAPM
+	* 위험 분산 및 자산 다각화의 원리
+	* 자본자산 가격결정 모형(CAPM)과 모델 내 공매도의 역할
+	* 최적의 위험 수익 포트폴리오를 계산법
+	* 포트폴리오 관리를 위한 효율적인 프런티어 개념
+
 
 ## 1 Welcome to the Course
 
@@ -185,3 +201,7 @@ r: 할인률 Discount rate (또는 회사의 자기자본 고정비용 혹은 �
 
 * r은 Risk 요소이다. 무위험자산일 경우 r = 무위험수익률이며, 위험자산일 경우 beta값을 통해 r값이 상승하여 현재평가가치 Pv는 하락한다.
 * g가 (-)라도 현재가격이 평가가치보다 낮다면 투자할 가치가 있다.
+
+[Course material - Week 1]({{ site.url }}/assets/pdf/financialmarket/financialmarket_w1.pdf)
+
+[Coursera - Financial Market - Week 1](https://www.coursera.org/learn/financial-markets-global/home/week/1)
