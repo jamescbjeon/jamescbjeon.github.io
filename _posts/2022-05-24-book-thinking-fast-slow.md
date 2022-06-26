@@ -10,7 +10,7 @@ tags: [대니얼 카너먼, 행동경제학, 전망이론, Book Review]
 
 불확실성 속에서의 상황판단 및 의사결정, 휴리스틱과 편향을 연구하고, 전망 이론 (Prospect theory)을 수립한 이 위대한 석학은, 고전경제학이 가정하는 경제 주체들의 합리성을 근간부터 부정한다. 대니얼의 관점에서 인간은 비합리적일 수 밖에 없으며, 이를 통해 본인도 의도치 않게 행동경제학이라는, 이제는 주류 경제학으로 도약한 새로운 학문적 토대를 제공하게 된다.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-aFZgVL4hvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/-aFZgVL4hvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 **생각에  관한  생각**은 인간 사고체계의 불합리성을 파헤치는 대중 교양서이다. 책의 구석구석은 단 한 문장도 버릴 곳을 찾기 힘들 정도로 필자가 일생 동안 연구한 양질의 연구 결과가 집약되어 있는, 반드시 읽어야 할 지금 시대의 역작이라고 할 만하다. 
